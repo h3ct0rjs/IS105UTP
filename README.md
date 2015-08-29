@@ -1,4 +1,4 @@
-![katoolin](https://cloud.githubusercontent.com/assets/8742190/9415562/83397aae-4840-11e5-8f72-28dfffcc70a9.png)
+![HappyProgramming](http://3.bp.blogspot.com/-AglId32_BNY/UOQa-hz-D7I/AAAAAAAAADg/HmoEgQS_BR4/s1600/wordle.png)
 # Programacion I ISC105, UTP 20152.
 Este Repositorio pretende ser una compilación de los ejercicios puestos en la clase de 
 programación I, dictada en la carrera de Ingenieria de Sistemas y Computación.
