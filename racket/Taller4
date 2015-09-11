@@ -1,0 +1,35 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-advanced-reader.ss" "lang")((modname Taller4) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f () #f)))
+;;====================================
+;Taller 3.0
+;Programas con funciones simples en Dr Racket
+;feedback:hfjimenez@utp.edu.co 
+;UTP.20152 ISC
+;====================================
+(display "
+\n============================================
+\t.:::Taller 4.0:::.
+ Manejo de COndicionales
+ feedback:hfjimenez@utp.edu.co 
+\t\tUTP.20152 ISC
+Repositorio:https://github.com/heticor915/IS105UTP
+===============================================
+Descripción:xxx not yet\n")
+;1. Desarrollar una funcion  para determinar si un n
+;dado es solucion de la ecuacion evaluada en la expresion
+(define (ejercicio1 n)
+
+  (if (= (+ (* 4 (expt n 2)) (* 6 n) 2) 462 )
+      (display "Si Es correcta la Solucion")
+      (display "No es la Solucion")
+  )   
+)
+
+;Casos de Prueba 10,12,14 
+(display "Prueba de 10: \t")
+(ejercicio1 10)
+(display "\nPrueba de 12: \t")
+(ejercicio1 12)
+(display "\nPrueba de 14: \t")
+(ejercicio1 14)

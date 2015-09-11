@@ -3,10 +3,22 @@
 #reader(lib "htdp-advanced-reader.ss" "lang")((modname Taller3) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f () #f)))
 ;====================================
 ;Taller 3.0
-;Programas con funciones simples en Dr Scheme
+;Programas con funciones simples en Dr Racket
 ;feedback:hfjimenez@utp.edu.co 
 ;UTP.20152 ISC
 ;====================================
+(display "
+\n============================================
+\t.:::Taller 3.0:::.
+Programas de funciones Simples:DrRacket
+ feedback:hfjimenez@utp.edu.co 
+\t\tUTP.20152 ISC
+Repositorio:https://github.com/heticor915/IS105UTP
+===============================================
+Descripción: Los ejercicios estan por,
+orden se ejecuta un titulo y un caso de prueba,
+para poder ver el resultado se debe modificar
+el archivo\n")
 ;::DESCRIPCION::
 ;Los Ejercicios se encuentra enumerados por orden
 ;Numerico, se utiliza el numero minimo de instrucciones.
@@ -102,6 +114,7 @@
  )
 ;Caso de Prueba!
 (volpiramide 40 10)
+
 ;OJOOOOO!
 ;13) Calcular el área exterior de la pirámide del ejercicio anterior.
 ;revisar !
@@ -117,7 +130,7 @@
 (volumencilindro 25 10)
 
 ;15) Calcular el área de la superficie de un cilindro.
-(define ()
+(define (areasuperficie )
   )
 ;16) Convertir de pulgadas a centímetros y otro programa que haga lo contrario.
 (define ()
@@ -126,7 +139,8 @@
 (define ()
   )
 ;18) Convertir de yardas a pies.
-(define ()
+(define (YardasaPies yardas)
+  (* yardas 3)
   )
 ;19) Convertir de millas a yardas.
 (define ()
@@ -137,7 +151,8 @@
 ;21) Dadas cantidades de billetes recibidos en denominaciones de $1.000, $2.000, $5.000,
 ;$10.000, $20.000 y $50.000, obtener como resultado el valor de del conjunto de todos
 ;los billetes.
-(define ()
+(define (billetes den1 den2 den3 den4 den5 den6 )
+  (+ (* den1 1000) (* den2 2000) (* den3 5000) (* den4 10000) (* den5 20000) (* 50000 den6))
   )
 ;22) De una solucion para la ecuación a x 2 + b x + c = 0 para valores de a, b y c dados.
 (define (cuadratica a b c)
@@ -145,8 +160,13 @@
   (/ (- (- b) ( sqrt (- (expt b 2) (* 4 a c)) )) (* 2 a))
   )
 ;23) Teniendo los lados de un triángulo rectángulo, encontrar el valor de la hipotenusa.
-(define ()
-  )
+(define (hipotenusa ladoa ladob )
+  ; Saca raiz cuadrada de la suma de los lados al cuadrado
+  (sqrt (+ (expt ladoa 2) (expt ladob 2)))
+)
+;Caso de Prueba
+(hipotenusa ladoa ladob)
+
 ;24) Teniendo un cubo de lado con valor n, calcular cual es el volumen de la mayor esfera
 ;que cabe dentro del cubo.
 (define ()
@@ -158,8 +178,11 @@
 ;26) Si la probabilidad de que caiga 6 al lanzar un dado es de 1/6, cual es la probabilidad
 ;de que caiga 6 en todos los n lanzamientos de un dado.
 (define (dado lanzamientos)
-  (* (/ 1 (expt 6 lanzamientos)) 100 )
-)
+  (* (/ lanzamientos 6 ) 100 )
+ )
 
 ;27) Si la probabilidad de que caiga 6 al lanzar un dado es de 1/6, cual es la probabilidad
 ;de que caiga al menos una vez 6 en n lanzamientos del dado.
+(define (probabilidad n)
+  (* (/ 1 (expt 6 n) ) 100)   ;La ecuacion de probabilidad es : (1/6**n)*100
+)
