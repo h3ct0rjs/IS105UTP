@@ -1,0 +1,7 @@
+# Ignore Meta Files of my racket Code.
+*~
+\#*
+.#*
+.DS_Store
+*.bak
+TAGS
