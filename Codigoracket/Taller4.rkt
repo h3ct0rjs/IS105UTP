@@ -1,5 +1,8 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-advanced-reader.ss" "lang")((modname Taller4) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f () #f)))
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
 ;;====================================
 ;Taller 4.0
 ;Programas con funciones simples en Dr Racket
@@ -24,7 +27,7 @@ Descripción:\n")
       )   
   )
 ;Casos de Prueba 10,12,14
-(display "\nEJERCICIO DE EXPRESION")
+(display "\nEJERCICIO DE EXPRESION\n")
 (display "Prueba de 10: \t")
 (ejercicio1 10)
 (display "\nPrueba de 12: \t")
@@ -162,15 +165,71 @@ Descripción:\n")
        (display "[+]R:0% DE PRESENCIA PATOLOGICA, ANEMIA\n")
        (display "LABORATORIO JIMENEZ S.A ")
        )
+     ])
+
+    ;
+  )  
+  
+;Caso de prueba
+(display "\n\n\tLectura de Datos:ANALISIS HEMOGLOBINA: \n")
+(display "Ingrese la Edad: ")
+(define edad(read))
+(display "Ingrese la NivelHemoglobina: ")
+(define nivelh(read))
+
+(hemog edad nivelh) 
+;Ejercicio 9.
+
+
+(define (fabricaJimenezTux ncompu)
+  (cond
+    [(< ncompu 5)
+     (begin
+       (display "\n\n##################################\n")
+       (display "Fabrica de Computadoras Jimenez Tux S.A.S\n")
+       (display "##################################\n")
+       (display "Costo Unit. Computadora:$1.100.000\nDescuento Aplicado:10%\nTotal:$")
+       (display (- (* 1100000 ncompu) (* 1100000 ncompu 0.1)))
+       )
+     ]
+    [(and (>= ncompu 5) (<= ncompu 10))
+     (begin
+       (display "\n\n##################################\n")
+       (display "Fabrica de Computadoras Jimenez Tux S.A.S\n")
+       (display "##################################\n")
+       (display "Costo Unit. Computadora:$1.100.000\nDescuento Aplicado:20%\nTotal:$")
+       (display (- (* 1100000 ncompu) (* 1100000 ncompu 0.2)))
+       )
+     ]
+    [(> ncompu 10)
+     (begin
+       (display "\n\n##################################\n")
+       (display "Fabrica de Computadoras Jimenez Tux S.A.S\n")
+       (display "##################################\n")
+       (display "Costo Unit. Computadora:$1.100.000\nDescuento Aplicado:40%\nTotal:$")
+       (display (- (* 1100000 ncompu) (* 1100000 ncompu 0.4)))
+       )
      ]
 
-    [else (error "[!]ATENCION:
- !LOS ANALISIS DETECTAN QUE EL PACIENTE POSEE ANEMIA,
- VISITE SU MEDICO PARA OBTENER MAS AYUDA.
- LABORATORIO JIMENEZ S.A 
-")]
-    ) 
+    )
   )
-;Caso de prueba
-;(hemog 1 0) Anemico 
-(hemog 2 11.7) ;No anemico, niveles correctos!
+;Caso de Prueba
+(fabricaJimenezTux 5)
+
+;Adornar este ejercicio !
+(define (ejercicio12 n1 n2 )
+  (if (<= n2 -1)
+      (* n1 n2)
+      (display "El numero 2 no es Negativo")
+    )
+  )
+;Caso de Prueba Ejercicio12
+(ejercicio12 12 -3)
+ 
+(define (ejercicio13 n1 n2 )
+  (if (and (>= n1 10 ) (<= n1 100) (>= n2 50 ) (<= n2 1000)  )
+      (+ (* 2 n1) (expt n2 2))
+      (display "\nNo cumple Parametros de Ejercicio 12\n")
+    )
+ )
+(ejercicio13 1 60)

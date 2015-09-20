@@ -1,7 +1,10 @@
 # Ignore Meta Files of my racket Code.
 *~
+/Codigoracket/*~
+/Codigoracket/*.bak
 \#*
 .#*
+
 .DS_Store
 *.bak
 TAGS

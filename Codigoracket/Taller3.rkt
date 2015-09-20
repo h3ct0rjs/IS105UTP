@@ -132,22 +132,50 @@ el archivo\n")
 ;15) Calcular el área de la superficie de un cilindro.
 (define (areasuperficie )
   )
+
+;Conversion de Unidades Fue Patrocinada Gracias a xD:
+;http://www.metric-conversions.org/es/longitud/
 ;16) Convertir de pulgadas a centímetros y otro programa que haga lo contrario.
-(define ()
-  )
+(define (pul2centimetro pulgadas)
+  (* 2.5400 pulgadas) ; 1 Pulgada segun SI equivale a 2.54 cm.
+)
+;Caso de Prueba de Pulgadas a Centimetros, 
+(pul2centimetro 2)
+
 ;17) Convertir de pies a pulgadas
-(define ()
-  )
+
+(define (pie2pulgada pies)
+  (* 12 pies) ; 1 Pie segun SI equivale a 12 in.
+)
+;Caso de Prueba de Pies a Pulgadas, 
+(pie2pulgada 2)
+
 ;18) Convertir de yardas a pies.
 (define (YardasaPies yardas)
   (* yardas 3)
   )
+;Caso de Prueba de Yardas a Pies
+(YardasaPies 5)
+
 ;19) Convertir de millas a yardas.
-(define ()
-  )
+(define (Md2Yarda millas)
+  (* 1760 millas) ; Conversion Utilizada fue :
+  ;Segun http://www.metric-conversions.org/es/longitud/tabla-de-conversion-de-millas-a-yardas.htm
+)
+
+;Caso de Prueba de Pies a Pulgadas, 
+(Md2Yarda 2)
+
+
 ;20) Convertir de millas a centímetros usando las funciones anteriores.
-(define ()
+(define (milla2centimetro milla)
+(* 1.6093e+5 milla)
   )
+
+;Caso de Prueba
+(milla2centimetro 2)
+
+
 ;21) Dadas cantidades de billetes recibidos en denominaciones de $1.000, $2.000, $5.000,
 ;$10.000, $20.000 y $50.000, obtener como resultado el valor de del conjunto de todos
 ;los billetes.
