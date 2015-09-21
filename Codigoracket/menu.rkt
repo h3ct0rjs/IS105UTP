@@ -4,7 +4,9 @@
 ;Funcion menu.
 
 (define (menu)
-  (display "\n::::MENU DE PROGRAMAS ::::
+  (display "
+
+\n::::MENU DE PROGRAMAS ::::
 .::LISTA::.
 1) Expresión n 2 + n + 24.\t\t\t2) Expresión (1/3) - n 3 * 55.
 3) Longitud de la circunferencia.\t\t4) Elevar al  cuadrado.
@@ -22,7 +24,8 @@
 27) Probabilidad de Dados 2.
 \n[!]Seleccione de la siguiente Lista el programa a ejecutar:")
   )
-
+;Todo este bloque tambien se puede reemplazar por un switch,solo que por academia,
+;se hizo asi.
 (define (seleccion choice)
   (cond
     [(= choice 1)
@@ -103,7 +106,7 @@
     [(= choice 26)
      (display "Selecciono 26 ")
      ]
-    (display "Ninguna Opcion Valida")
+    (display "Ninguna Opcion Valida") 
     )
   )
 
