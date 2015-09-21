@@ -1,12 +1,15 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-advanced-reader.ss" "lang")((modname Taller3) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f () #f)))
+#reader(lib "htdp-advanced-reader.ss" "lang")((modname Taller3ingresodedatos) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f () #f)))
 ;====================================
 ;Taller 3.0
 ;Programas con funciones simples en Dr Racket
 ;feedback:hfjimenez@utp.edu.co 
 ;UTP.20152 ISC
 ;====================================
+;ToDo:
+;Se debe realizar un menu que muestre la lista, de los programas
+;el elegido por el usuario se realiza. 
 (display "
 \n============================================
 \t.:::Taller 3.0:::.
@@ -27,11 +30,15 @@ Se debe hacer uso de racket en lenguaje avanzado\n")
 ;estudiante avazando
 
 ;1) Resolver la expresión n**2 + n + 24
-(define (ejercicio1 n)
+(define (ejercicio1 n) 
     (+ (expt n 2) (+ n) 24)
   )
 ;Caso de prueba
-(ejercicio1  2)
+(display "\n1.Solucion a Expresion Matematica")
+(display "\nIngrese valor de n: ")
+(define n(read))
+(display "\nSolucion: ")
+(ejercicio1  n) 
 
 
 ;2) Resolver la expresión (1/3) - n**3 * 55.
@@ -39,15 +46,24 @@ Se debe hacer uso de racket en lenguaje avanzado\n")
   (- (/ 1 3) (* (expt m 3) 55))
   )
 ;Caso de prueba
-(ejercicio2 2)
 
+(display "\n2.Solucion a Expresion Matematica 2")
+(display "\nIngrese valor de n: ")
+(define n1(read))
+(display "\nSolucion: ")
+(ejercicio2 n1)
 
 ;3) Medir la longitud de la circunferencia, dado el radio como parámetro.
 (define (longitudc r)
   (* 2 pi r)
 )
 ;Caso de prueba
-(longitudc 2)
+
+(display "\n3.Longitud de Circunferencia")
+(display "\nIngrese valor de Radio: ")
+(define r(read))
+(display "\nLongitud Circunferencia: ")
+(longitudc r)
 
 
 ;4) Hacer una función que eleve al cuadrado sin usar expt o sqr .
@@ -55,7 +71,11 @@ Se debe hacer uso de racket en lenguaje avanzado\n")
   (* v v)
 )
 ;Caso de prueba
-(cuadradito 2)
+(display "\n4.Elevar al Cuadrado")
+(display "\nIngrese valor a elevar: ")
+(define cu(read))
+(display "\nCalculo de n cuadrado: ")
+(cuadradito cu )
 
 ;5) Calcular el área de un círculo.
 (define (circuloarea ar)
@@ -63,7 +83,12 @@ Se debe hacer uso de racket en lenguaje avanzado\n")
   )
 
 ;Caso de prueba
-(circuloarea 2)
+
+(display "\n5.Calcular el área de un círculo.")
+(display "\nIngrese valor Radio: ")
+(define rc(read))
+(display "\nCalculo de n cuadrado: ")
+(circuloarea rc)
 
 ;6) Encontrar el área de un anillo, conociendo el radio interior y el exterior.
 (define (areanillo rexterior rinterior)
