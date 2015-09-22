@@ -19,3 +19,5 @@
 (define c(read))
 
 (cuadratica a b c)
+;Esto tambien podria ser hecho:
+;(cuadratica (read) (read) (read) )
