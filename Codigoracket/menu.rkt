@@ -24,13 +24,25 @@
 27) Probabilidad de Dados 2.
 \n[!]Seleccione de la siguiente Lista el programa a ejecutar:")
   )
+
+(define (ejercicio1 n) 
+    (+ (expt n 2) n 24)
+  )
+
+;Caso de prueba
+
 ;Todo este bloque tambien se puede reemplazar por un switch,solo que por academia,
 ;se hizo asi.
 (define (seleccion choice)
   (cond
     [(= choice 1)
-     (display "Selecciono 1 ")
+     (begin
+       (display "\n1.Solucion a Expresion Matematica")
+       (display "\nIngrese valor de n: ")
+       (ejercicio1  (read) )
+       )
      ]
+    
     [(= choice 2)
      (display "Selecciono 2 ")
      ]

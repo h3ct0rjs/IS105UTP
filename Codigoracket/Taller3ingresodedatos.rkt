@@ -32,7 +32,7 @@ REQUISITOS: Se debe hacer uso de racket en lenguaje avanzado\n")
 
 ;1) Resolver la expresión n**2 + n + 24
 (define (ejercicio1 n) 
-    (+ (expt n 2) (+ n) 24)
+    (+ (expt n 2) n 24)
   )
 ;Caso de prueba
 (display "\n1.Solucion a Expresion Matematica")
@@ -352,9 +352,8 @@ REQUISITOS: Se debe hacer uso de racket en lenguaje avanzado\n")
 (define (esferamenor ladon)
 (/ (* (expt ladon 3 ) pi (sqrt 3 ) ) 2 )
  )
-
-25) \t26) 
-27) Probabilidad de Dados 2.
+ 
+;27) Probabilidad de Dados 2.
 (display "\n25.Volumen: Menor Esfera,que Contiene Cubo.")
 (display "Ingrese Lado n: ")
 (define ladon(read))

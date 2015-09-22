@@ -57,13 +57,14 @@ Descripción:\n")
       )]
    [(< (expt b 2) (* 4 a c))
     (begin
-      (display "\n\nEcuacion Cuadratica\n")
       (display "\n.::No Existe Solucion Factible::.\n\n")
       )]
    );Fin Cond
   );Fin Define
 ;Caso de Prueba
-(cuadratica 1 4 1)
+(display "\n\nEcuacion Cuadratica\n")
+(display "\nIngrese los Valores de a b c:")
+(cuadratica (read) (read) (read))
 
 ;--------------------
 ;Valor Absoluto de Un numero.
@@ -75,14 +76,14 @@ Descripción:\n")
     )
   )
 ;Caso de Prueba
-(valorabs -9)
+(display "\nIngrese valor a Probar:")
+(valorabs (read))
 
 ;--------------------
 (define (compradllantas n)
   (cond 
     [(< n 5)
      (begin  
-       (display "\n\n::COMPRAVENTAS PIRELLI:LLANTAS::\n")
        (display "Costo a $30000\n")
        (display "Total:$")
        (display(* n 30000))
@@ -90,7 +91,6 @@ Descripción:\n")
      ]
     [(>= n 5)
      (begin
-       (display "\n\n::COMPRAVENTAS PIRELLI:LLANTAS::\n")
        (display "Costo a $20000\n")
        (display "Total:$")
        (display (* n 20000))
@@ -100,7 +100,9 @@ Descripción:\n")
     )
   ) 
  ; Caso de Prueba
-(compradllantas 7)
+(display "\n\n::COMPRAVENTAS PIRELLI:LLANTAS::\n")
+(display "Cantidad de Llantas a Comprar")
+(compradllantas (read))
 
 ;--------------------
 
@@ -146,7 +148,7 @@ Descripción:\n")
      (begin
        (display "\n\n:::RESULTADO Analisis: HEMOGLOBINA:::\n")
        (display "Datos Paciente:\n[*]Edad:")
-       (display edad)
+       (display edad) 
        (display "  [*]Nivel Hemoglobina:")
        (display nivelh)
        (display "\nNo Presenta Problemas Medicos\n")
@@ -165,22 +167,23 @@ Descripción:\n")
        (display "[+]R:0% DE PRESENCIA PATOLOGICA, ANEMIA\n")
        (display "LABORATORIO JIMENEZ S.A ")
        )
-     ])
-
+     ]
+    )
+  
     ;
   )  
   
 ;Caso de prueba
-(display "\n\n\tLectura de Datos:ANALISIS HEMOGLOBINA: \n")
-(display "Ingrese la Edad: ")
-(define edad(read))
-(display "Ingrese la NivelHemoglobina: ")
-(define nivelh(read))
+;(display "\n\n\tLectura de Datos:ANALISIS HEMOGLOBINA: \n")
+;(display "Ingrese la Edad: ")
+;(define edad(read))
+;(display "Ingrese la NivelHemoglobina: ")
+;(define nivelh(read))
 
-(hemog edad nivelh) 
+;(hemog edad nivelh) 
+
+
 ;Ejercicio 9.
-
-
 (define (fabricaJimenezTux ncompu)
   (cond
     [(< ncompu 5)
@@ -215,6 +218,7 @@ Descripción:\n")
   )
 ;Caso de Prueba
 (fabricaJimenezTux 5)
+;Pendiente Universidad , Menu, Funcion Recursiva.
 
 ;Adornar este ejercicio !
 (define (ejercicio12 n1 n2 )
@@ -232,4 +236,119 @@ Descripción:\n")
       (display "\nNo cumple Parametros de Ejercicio 12\n")
     )
  )
+
 (ejercicio13 1 60)
+
+(define (ejercicio14 n1 n2)
+             (begin
+               (display "\n:::Ejercicio 14:::")
+               (display "\n:::Determinacion de Numero Mayor:::\n")
+               (if (= n1 n2)
+                   (display "Los numero son Iguales, Esto solo es para numeros diferentes")
+                   (begin
+                     (if(> n1 n2)
+                          (printf "Numero N1:~a es Mayor que N2:~s " n1 n2)
+                          (printf "Numero N2:~a es Mayor que N1:~s " n2 n1)
+                        )
+                     )
+                   )
+               )
+             )
+
+;Caso de Prueba Ejercicio 14.
+(ejercicio14 1 2)
+
+(define (ejercicio15 numerito )
+  (if (>= numerito  0 )
+      (begin
+        (if (= ( modulo numerito 2) 0 )
+            (display "\nEl numero es Par")
+            (display "\nEl numero es Impar")
+            )
+        )
+      (display "\n[*]Numero es Negativo!")
+      )
+  )
+;Caso de Prueba Ejercicio 15.
+(display "\n:::Ejercicio 15:::")
+(display "\nIngrese un Numero: ")
+(define numerito(read) )
+(ejercicio15 numerito)
+
+;Ejercicio 16
+(define (ejercicio16 num1 num2)
+  (if (> num1 num2);Si el primer numero es mayor que numero 2 
+      (begin
+        (display "\nSe resta los numeros:")
+        (- num1 num2)
+        )
+      (if (= (modulo num2 3 ) 0 ); si el numero dos es multiplo de 3, multipliquelos
+          (begin
+            (display "\nSe Multiplican los numeros:")
+            (* num1 num2)
+            )
+          (if(= num1 num2 ); Si ambos numeros son iguales entonces sumelos
+             (begin
+               (display "Los numeros Se Suman:")
+               (+ num1 num2)
+               );Si no es por que no se presenta con el caso del ejercicio
+             (display "\n No presenta ninguna de las opciones del EJERCICIO 16.")
+             )
+            
+          )
+
+      )
+   )
+
+(display "\n:::Ejercicio 16:::")
+(display "\nIngrese Dos Numeros")
+(ejercicio16 (read) (read)); Los valores no quedan almacenados en ninguna parte
+;de acuerdo al material de ayuda estos valores son volatiles.
+
+;Ejercicio 17
+(define (ejercicio17 numero)
+  (if (and (>= numero 0) (<= numero 99 ))
+      (begin
+        (display "Suma de los Digitos Componentes:")
+        (display "\nResultado es: ")
+        (+ (quotient numero 10) (remainder numero 10 ))
+        )
+      (if (>= numero 100 )
+          (display "El numero es de Tres Cifras")
+          (display "El numero es Negativo")
+          )
+      )
+  )
+(display "\n:::Ejercicio 17:::")
+(display "\nIngrese un Numero: ")
+(ejercicio17 (read) )
+
+;Sean 10,000 de inversion  a un año(12) es capitalizable mensualmente a una tasa de 12% anual. 
+;si el cálculo fuese con capitalización anual, sería como sigue 10,000 X (1+12 %anual) = 11,200 
+
+;sin embargo, como es capitalizable mensual, entonces los intereses generados en el mes anterior
+;se sumarán al capital inicial y el cálculo es como sigue 10,000 X (1+(12% anual/12 meses))^12 = 11,268.25 
+;eso es porque el primer mes invertirías 10,000 a una tasa de 1% mensual (12% entre 12 meses) y obtendrías 10,100
+;al siguiente mes que esos 10,100 se reinvertirían otra vez a una tasa de 1% mensual dándote 10,201,
+;y así sucesivamente.
+
+;Es decir, a menor periodo de capitalización, mayor la cantidad otorgada por concepto de interés.
+
+;Ejercicio 18
+;Esta capitalizacion puede tomarse como recursiva, o puede generalizarce con matematicas, se puede hallar como interes compuesto.
+(define (ejercicio18 ahorroinicial)
+  (begin
+    (display "\nAhorro Capitalizable a 10 años:$")
+    (* ahorroinicial (expt (+ 1 (/ 0.36 120)) 12))
+  )
+  
+  )
+(ejercicio18 (read))
+
+;Ejercicio 19
+(define (Promedio L) ;Se podria hacer con +, por que esto espera uno por uno, pero para ello esta la funcion apply.
+(/ (apply + L) (length L))
+  )
+
+(Promedio '(1 2 4 5 6 7 ))
+
