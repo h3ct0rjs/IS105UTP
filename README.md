@@ -8,13 +8,14 @@ Este Repositorio pretende ser una compilación de los ejercicios puestos en la c
   - Talleres y sus soluciones.
   - Solucion a Retos.
   - Tareas propuestas.
-  - Instaladores de DrRacket.
+  - Links de instaladores de DrRacket.
   - Notas, Presentaciones de Clase.
 
 ### Version
-0.0
+0.1
 ### Requisitos
 Para correr los ejercicios desarrollados necesitaras la ultima versión de Drracket, a la hora de probar se encontraba en la versión 6.2.1, probado bajo Debian Gnu/Linux y OpenBsd.
+Todos los ejercicios pueden ser testeados utilizando la seleccion de lenguaje avanzado.
 
 Es posible utilizar el instalador hallado dentro de este repositorio e instalarlo de la siguiente manera si usas Debian Gnu/Linux o derivados:
 ```sh
@@ -32,8 +33,8 @@ user@/usr/bin/racket/bin$ sudo ln -sf drracket /usr/bin/drracket
 user@evilmachine$ git clone https://github.com/heticor915/IS105UTP.git 
 ```
 ### ToDo's
- - Adicionar Descripciones Grales.
- - Rethink Github Save
+ - Proyecto Final Utilizando Graficos.
+ - Proyecto Personal Ipparser de Ip's Lacnic.
 
 Licencia
 ----
