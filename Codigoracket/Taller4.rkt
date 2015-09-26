@@ -70,12 +70,13 @@ Descripción:\n")
 ;Valor Absoluto de Un numero.
 (define  (valorabs n)
   (begin
-    (display "\n\nVALOR ABSOLUTO NUMERO!")
     (display "\nEl valor Absoluto es :")
     (abs n)
     )
   )
 ;Caso de Prueba
+
+(display "\n\nVALOR ABSOLUTO NUMERO!")
 (display "\nIngrese valor a Probar:")
 (valorabs (read))
 
@@ -109,14 +110,12 @@ Descripción:\n")
 (define (supermercado totalcompra)
   (if (>= (random 100) 74)
       (begin
-        (display "\n\n--SUPERMERCADO JIMENEZ--\nFactura de Compra:")
         (display  totalcompra)
         (display "\nDescuento Aplicado del 20%\n")
         (display "Total a Pagar: ")
         (display (- totalcompra (* totalcompra 0.2)))
         )
       (begin
-        (display "\n\n--SUPERMERCADO JIMENEZ--\nFactura de Compra:")
         (display totalcompra)
         (display "\nDescuento Aplicado del 15%\n")
         (display "Total a Pagar: ")
@@ -125,12 +124,14 @@ Descripción:\n")
       )
   )
 ;Caso de Prueba
-(supermercado 15000)
+(display "\n\n--SUPERMERCADO JIMENEZ--\nFactura de Compra:")
+(display "Ingrese el Total de Pago: $" )
+(supermercado (read) )
 
 ;--------------------
 
 (define (hemog edad nivelh)
-  (cond
+  Q(cond
     [(and (> edad 1 ) (<= edad 5) (>= nivelh 11.5) (<= nivelh 15))
      (begin
        (display "\n\n:::RESULTADO Analisis: HEMOGLOBINA:::\n")
@@ -174,13 +175,12 @@ Descripción:\n")
   )  
   
 ;Caso de prueba
-;(display "\n\n\tLectura de Datos:ANALISIS HEMOGLOBINA: \n")
-;(display "Ingrese la Edad: ")
-;(define edad(read))
-;(display "Ingrese la NivelHemoglobina: ")
-;(define nivelh(read))
-
-;(hemog edad nivelh) 
+(display "\n\n\tLectura de Datos:ANALISIS HEMOGLOBINA: \n")
+(display "Ingrese la Edad: ")
+(define edad(read))
+(display "Ingrese la NivelHemoglobina: ")
+(define nivelh(read))
+(hemog edad nivelh) ;Llamado de Funcion de Hemoglobina. 
 
 
 ;Ejercicio 9.
@@ -197,18 +197,12 @@ Descripción:\n")
      ]
     [(and (>= ncompu 5) (<= ncompu 10))
      (begin
-       (display "\n\n##################################\n")
-       (display "Fabrica de Computadoras Jimenez Tux S.A.S\n")
-       (display "##################################\n")
        (display "Costo Unit. Computadora:$1.100.000\nDescuento Aplicado:20%\nTotal:$")
        (display (- (* 1100000 ncompu) (* 1100000 ncompu 0.2)))
        )
      ]
     [(> ncompu 10)
      (begin
-       (display "\n\n##################################\n")
-       (display "Fabrica de Computadoras Jimenez Tux S.A.S\n")
-       (display "##################################\n")
        (display "Costo Unit. Computadora:$1.100.000\nDescuento Aplicado:40%\nTotal:$")
        (display (- (* 1100000 ncompu) (* 1100000 ncompu 0.4)))
        )
@@ -217,10 +211,13 @@ Descripción:\n")
     )
   )
 ;Caso de Prueba
-(fabricaJimenezTux 5)
+(display "\n\n##################################\n")
+(display "Fabrica de Computadoras Jimenez Tux S.A.S\n")
+(display "##################################\n")
+(display "Ingresa la Cantidad de Computadores: ")
+(fabricaJimenezTux (read) )
 ;Pendiente Universidad , Menu, Funcion Recursiva.
 
-;Adornar este ejercicio !
 (define (ejercicio12 n1 n2 )
   (if (<= n2 -1)
       (* n1 n2)
@@ -228,7 +225,9 @@ Descripción:\n")
     )
   )
 ;Caso de Prueba Ejercicio12
-(ejercicio12 12 -3)
+(display "Numero Negativo?")
+(display "Ingrese dos numeros ")
+(ejercicio12 (read) (read))
  
 (define (ejercicio13 n1 n2 )
   (if (and (>= n1 10 ) (<= n1 100) (>= n2 50 ) (<= n2 1000)  )
@@ -237,7 +236,9 @@ Descripción:\n")
     )
  )
 
-(ejercicio13 1 60)
+(display "\nEjercicio 13")
+(display "\nIngrese Dos Numero para Evaluar Condiciòn:\n")
+(ejercicio13 (read) (read))
 
 (define (ejercicio14 n1 n2)
              (begin
@@ -256,7 +257,9 @@ Descripción:\n")
              )
 
 ;Caso de Prueba Ejercicio 14.
-(ejercicio14 1 2)
+(display "\nEjercicio 14")
+(display "Determinacion de Numero Mayor:\n")
+(ejercicio14 (read) (read) )
 
 (define (ejercicio15 numerito )
   (if (>= numerito  0 )
@@ -346,9 +349,60 @@ Descripción:\n")
 (ejercicio18 (read))
 
 ;Ejercicio 19
-(define (Promedio L) ;Se podria hacer con +, por que esto espera uno por uno, pero para ello esta la funcion apply.
-(/ (apply + L) (length L))
+
+;Ejercicio 20 No se realiza ya que se debe hacer llamados recursivos, comentado por profesor.
+;Detectar los numeros primos podria hacer uso del siguiente articulo de ciencia y tecnica:
+;http://www.redalyc.org/pdf/849/84933912007.pdf
+;http://www.redalyc.org/articulo.oa?id=84921327033
+
+;Ejercicio 21
+
+(define (aerolinea Destino Dias)
+  (cond
+    [(= Destino 1)
+     (if (= Dias 0 )
+         (display "Costo Tiquete $153USD")
+         (if (= Dias 1)
+             (display "Costo Tiquete $141.75USD")
+             (if (>= Dias 2)
+                 (display "Costo Tiquete $135USD")
+                 (display "Su Tiquete no Presente Descuento"))
+             )
+         )
+     ]; Es Bogota Nuestro Vuelo
+
+     [(= Destino 2)
+     (if (= Dias 0 )
+         (display "Costo Tiquete $148.5USD")
+         (if (= Dias 1)
+             (display "Costo Tiquete $141.75USD")
+             (if (>= Dias 2)
+                 (display "Costo Tiquete $131.13USD")
+                 (display "Su Tiquete no Presente Descuento"))
+             )
+         )
+     ]; Es San Andres Nuestro Vuelo
+     
+    [(> Destino 3)
+
+     (display "Lo Sentimos, El destino Ingresado no se encuentra Disponible")]; Es Bogota Nuestro Vuelo
+   
+    )
   )
 
-(Promedio '(1 2 4 5 6 7 ))
+(define (msgaerolinea)
+  (begin
+    (display "\n:::AEROLINEA JIMENEZ:::\n")
+    (display "Destinos,Ingrese 1 o 2 Segun:
+      [1]> Bogota
+      [2]> San Andres \n")
+    )
+  );Destinos Bogota,San Andres
 
+(msgaerolinea)
+(display "\n[?]>")
+(define Destino(read))
+(display "Ingrese la Cantidad de Dias Anticipado a Comprar Tiquetes: ")
+(display "\n[?]>")
+(define Dias(read));Almacena la cantidad de Dias
+(aerolinea Destino Dias)
