@@ -165,3 +165,22 @@ Repositorio:https://github.com/heticor915/IS105UTP
 (elevar (read ) (read) 1) ; Inicializamos acumulador en 1, solo en caso 
 
 ;13. Calculo de Submultiplos.
+
+;funcion de fibonachi
+(define (fibonachi n anterior actual cuenta)
+  (if (= n 0 )
+      0
+      (if (<= cuenta n)
+          (fibonachi n (+ actual anterior) anterior (+ cuenta 1))
+          (display actual)
+       )
+   )
+)
+
+(display "\nEJERCICIO 16\n")
+(display "\nFIBONACCI Serie\n")
+(display "\n Ingrese N:\n")
+(fibonachi (read) 1 0 1)   ; Serie de Fibonacci.
+
+
+
