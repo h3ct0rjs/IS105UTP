@@ -111,3 +111,57 @@ Repositorio:https://github.com/heticor915/IS105UTP
 (display "\nTablas de Multiplicar hasta n\n")
 (display "Ingrese El N para mostrar esas Tablas de Multiplicar: ")
 (tablas2  (read) 1 1 )
+;7. Calculo del Factorial
+(define (factorial n)
+  (if (= n  0) 
+      (begin
+      (display "El factorial es :")
+      (display (+ n 1))
+        )
+      (* n (factorial (- n 1)))
+      ))
+
+(display "\nEJERCICIO 7\n")
+(display "\n::FACTORIAL::\n")
+(display "Ingrese El N para Obtener el Factorial:")
+(factorial (read)  ); Leemos el valor del usuario, denominado n en la funcion, nosotros inicializamos
+;un contador que va de 1 hasta 1 que sea mayor que n.
+
+;11. Calculo del Factorial
+(define (elevar base exponente acumulador)
+  (if (< exponente 0) 
+      (display "Esto es Solo para Valores Positivos")
+      (if (= exponente 0)
+          (display acumulador)
+          (begin 
+            (elevar base (- exponente 1) (+ 0 (* base acumulador) ))
+           
+           )
+          )
+      )
+  )
+(display "\nEJERCICIO 11\n")
+(display "\nElevar sin Square y Expt\n")
+(display "Ingrese la Base y Exponente: ")
+(elevar (read ) (read) 1) ; Inicializamos acumulador en 1, solo en caso 
+
+
+;12. Calculo del Factorial, Mismo de 11 solo que con signos cambiados
+(define (elevar base exponente acumulador)
+  (if (< exponente 0) 
+      (display "Esto es Solo para Valores Positivos")
+      (if (= exponente 0)
+          (display acumulador)
+          (begin 
+            (elevar base (- exponente 1) (+ 0 (* base acumulador) ))
+           
+           )
+          )
+      )
+  )
+(display "\nEJERCICIO 12\n")
+(display "\nElevar sin Square y Expt, Valores Negativos\n")
+(display "Ingrese la Base y Exponente: ")
+(elevar (read ) (read) 1) ; Inicializamos acumulador en 1, solo en caso 
+
+;13. Calculo de Submultiplos.
