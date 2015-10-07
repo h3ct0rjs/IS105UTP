@@ -34,7 +34,6 @@ Repositorio:https://github.com/heticor915/IS105UTP
 (display "")
 ;2.El mismo programa anterior pero mostrando el mensaje n veces.
 ;Ejercicio2
-
 (define (msg2 texto contadorini nveces)
   (if (<= contadorini nveces) 
       (begin
@@ -111,6 +110,7 @@ Repositorio:https://github.com/heticor915/IS105UTP
 (display "\nTablas de Multiplicar hasta n\n")
 (display "Ingrese El N para mostrar esas Tablas de Multiplicar: ")
 (tablas2  (read) 1 1 )
+
 ;7. Calculo del Factorial
 (define (factorial n)
   (if (= n  0) 
@@ -119,14 +119,15 @@ Repositorio:https://github.com/heticor915/IS105UTP
       (display (+ n 1))
         )
       (* n (factorial (- n 1)))
-      ))
+      )
+  )
 
 (display "\nEJERCICIO 7\n")
 (display "\n::FACTORIAL::\n")
 (display "Ingrese El N para Obtener el Factorial:")
 (factorial (read)  ); Leemos el valor del usuario, denominado n en la funcion, nosotros inicializamos
 ;un contador que va de 1 hasta 1 que sea mayor que n.
-
+;8,9,10
 ;11. Calculo del Factorial
 (define (elevar base exponente acumulador)
   (if (< exponente 0) 
@@ -136,7 +137,7 @@ Repositorio:https://github.com/heticor915/IS105UTP
           (begin 
             (elevar base (- exponente 1) (+ 0 (* base acumulador) ))
            
-           )
+           )  
           )
       )
   )
@@ -147,13 +148,13 @@ Repositorio:https://github.com/heticor915/IS105UTP
 
 
 ;12. Calculo del Factorial, Mismo de 11 solo que con signos cambiados
-(define (elevar base exponente acumulador)
+(define (elevar2 base exponente acumulador)
   (if (< exponente 0) 
       (display "Esto es Solo para Valores Positivos")
       (if (= exponente 0)
           (display acumulador)
           (begin 
-            (elevar base (- exponente 1) (+ 0 (* base acumulador) ))
+            (elevar2 base (- exponente 1) (+ 0 (* base acumulador) ))
            
            )
           )
@@ -162,9 +163,37 @@ Repositorio:https://github.com/heticor915/IS105UTP
 (display "\nEJERCICIO 12\n")
 (display "\nElevar sin Square y Expt, Valores Negativos\n")
 (display "Ingrese la Base y Exponente: ")
-(elevar (read ) (read) 1) ; Inicializamos acumulador en 1, solo en caso 
+(elevar2 (read ) (read) 1) ; Inicializamos acumulador en 1, solo en caso 
 
 ;13. Calculo de Submultiplos.
+
+
+;15.Hacer una función booleana que indique si un número es primo o no.
+;Version de Gabriel alias LlaneroSolitario!
+(define (primo n i)
+  (if (>= n 2 )
+      (if (= n 2)
+          (display "Es primo")
+          (if (< i n)
+              (if (integer? (/ n i))
+                  (display "No es primo" )
+                  (primo n (+ i 1))
+                  )
+              
+          (display "Es primo")
+
+              )
+          )
+
+  (display "No es Primo")
+  )
+  )
+(define (primox n) (primo n 2))
+(display "\nEJERCICIO 15\n")
+(display "\nFuncion Booleana n\n")
+(display "Ingresa n : ")
+(primox (read))
+
 
 ;funcion de fibonachi
 (define (fibonachi n anterior actual cuenta)
@@ -176,6 +205,7 @@ Repositorio:https://github.com/heticor915/IS105UTP
        )
    )
 )
+
 
 (display "\nEJERCICIO 16\n")
 (display "\nFIBONACCI Serie\n")
