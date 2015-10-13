@@ -61,7 +61,11 @@ Repositorio:https://github.com/heticor915/IS105UTP
       (display "EOF")
       )
   )
-(primerosn 1 50)
+
+(display "\nEJERCICIO 3\n")
+(display "Muestra la Sucesion Sn=1,2,3,...,n-1,n")
+(primerosn 1 (read)) ; Se utiliza un contador, la tecnica utilizada es incremental hasta n.
+;Tambien se hubiear podido realizar con tecnica decremntal hasta 1.
 
 ;Ejercicio 4 
 ;Hacer una función que muestre la tabla de multiplicar
@@ -110,6 +114,15 @@ Repositorio:https://github.com/heticor915/IS105UTP
 (display "\nTablas de Multiplicar hasta n\n")
 (display "Ingrese El N para mostrar esas Tablas de Multiplicar: ")
 (tablas2  (read) 1 1 )
+;6. Hacer una función que calcule la sumatoria para los números enteros hasta N.
+(define (sumatoria n m)
+   (if (= n m)
+      0
+      (+ m (sumatoria n (- m 1)))))
+
+(display "\nEJERCICIO 6\n")
+(display "\nCalculo de Sumatoria hasta N\n")
+(sumatoria 0 (read))
 
 ;7. Calculo del Factorial
 (define (factorial n)
