@@ -125,22 +125,53 @@ Repositorio:https://github.com/heticor915/IS105UTP
 (sumatoria 0 (read))
 
 ;7. Calculo del Factorial
-(define (factorial n)
-  (if (= n  0) 
-      (begin
-      (display "El factorial es :")
-      (display (+ n 1))
-        )
-      (* n (factorial (- n 1)))
-      )
+
+(define (factorial x cont acu)   ;Explicación 1
+  (cond 
+    
+    [(>= x cont)
+     (factorial x (+ cont 1) (* acu cont))
+     ]  
+    
+    [(= x 0) 
+     (display 1)
+     ]  
+    
+    [(< x 0) 
+     "No existe"
+     ]  
+    (else 
+     (display acu)
+          )
+          )
   )
+  
 
 (display "\nEJERCICIO 7\n")
 (display "\n::FACTORIAL::\n")
 (display "Ingrese El N para Obtener el Factorial:")
-(factorial (read)  ); Leemos el valor del usuario, denominado n en la funcion, nosotros inicializamos
+(factorial (read) 1 1)  ; Leemos el valor del usuario, denominado n en la funcion, nosotros inicializamos
 ;un contador que va de 1 hasta 1 que sea mayor que n.
-;8,9,10
+;8
+
+;Sumatoria!
+(define (sumatoria n)
+  (cond 
+    [(= n 0) 0]
+    [else 
+     (+ n (sumatoria (- n 1) ) )
+     ]
+   )
+  )
+
+(display "\nEJERCICIO 8\n")
+(display "\n::SUMATORIA::\n")
+(display "Ingrese El n para Obtener La sumatoria:")
+(sumatoria (read) )
+(display "El caso Base Fue i=0, de lo contrario :")
+
+;9 Hacer una función que calcule la sumatoria de los números dados por la expresión x2 / 2. Para todos los números entre 1 y n.
+ 
 ;11. Calculo del Factorial
 (define (elevar base exponente acumulador)
   (if (< exponente 0) 
