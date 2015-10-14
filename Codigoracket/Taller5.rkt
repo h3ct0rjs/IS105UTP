@@ -84,7 +84,7 @@ Repositorio:https://github.com/heticor915/IS105UTP
      )
      (display "EOF\n")
    )
- )
+)
 
 (display "\nEJERCICIO 4\n")
 (display "\nTablas de Multiplicar de n, n*1 hasta 10\n")
@@ -128,21 +128,17 @@ Repositorio:https://github.com/heticor915/IS105UTP
 
 (define (factorial x cont acu)   ;Explicación 1
   (cond 
-    
     [(>= x cont)
      (factorial x (+ cont 1) (* acu cont))
      ]  
-    
     [(= x 0) 
      (display 1)
      ]  
-    
     [(< x 0) 
      "No existe"
      ]  
     (else 
-     (display acu)
-          )
+     (display acu)         )
           )
   )
   
@@ -156,9 +152,29 @@ Repositorio:https://github.com/heticor915/IS105UTP
 
 (display "\nEJERCICIO 8\n")
 (display "::SUMATORIA::\n")
+(display "Este ejercicio se encuentra ya utilizado.")
 
 ;9 Hacer una función que calcule la sumatoria de los números dados por la expresión x2 / 2. Para todos los números entre 1 y n.
- 
+
+;10. x^2/2, Suma de estos
+(define (sumatoria2 n i acumulador) ; Incremental hasta n
+  (if (<= i n)
+      (begin
+        (display i )
+        (display "\t")
+        (display acumulador )
+        (newline)
+       (sumatoria2 n (+ i 1) (+ acumulador (/ (expt i 2) 2) ) )
+      );Fin Begin
+      (display "Fin")     
+      );Fin If
+  );Fin Funcion
+
+(display "\nEJERCICIO 10")
+(display "\nSumatoriad de x^2/2\n")
+(display "\n Ingrese N:\n")
+(sumatoria2 (read) 1 0 )
+
 ;11. Calculo del Factorial
 (define (elevar base exponente acumulador)
   (if (< exponente 0) 
@@ -180,8 +196,7 @@ Repositorio:https://github.com/heticor915/IS105UTP
 
 ;12. Calculo del Factorial, Mismo de 11 solo que con signos cambiados
 (define (elevar2 base exponente acumulador)
-  (if (< exponente 0) 
-      (display "Esto es Solo para Valores Positivos")
+  (if (< exponente 0)
       (if (= exponente 0)
           (display acumulador)
           (begin 
@@ -189,18 +204,21 @@ Repositorio:https://github.com/heticor915/IS105UTP
            
            )
           )
+      (display "Esto es Solo para Valores Negativos")
+      
       )
   )
 (display "\nEJERCICIO 12\n")
 (display "\nElevar sin Square y Expt, Valores Negativos\n")
 (display "Ingrese la Base y Exponente: ")
-(elevar2 (read ) (read) 1) ; Inicializamos acumulador en 1, solo en caso 
+(elevar2 (read ) (read) 1)
 
 ;13. Calculo de Submultiplos.
 
 
 ;15.Hacer una función booleana que indique si un número es primo o no.
-;Version de Gabriel alias LlaneroSolitario!
+;Version de Gabriel alias LlaneroSolitario!, Este codigo funciona muy bien.
+
 (define (primo n i)
   (if (>= n 2 )
       (if (= n 2)
@@ -237,14 +255,15 @@ Repositorio:https://github.com/heticor915/IS105UTP
    )
 )
 
-
 (display "\nEJERCICIO 16")
-(display "\nFIBONACCI Serie\n")
-(display "\n Ingrese N:\n")
+(display "\nSerie de FIBONACCI \n")
+(display "\n Ingrese n:\n")
 (fibonachi (read) 1 0 1)   ; Serie de Fibonacci.
+
+
+
 ;20. Hacer un programa que indique los pasos a seguir para resolver el problema de las torres
 ;de Hanoi con n  anillosz
-
 (define (inductivo anillos)
   (begin
     (display "\nLa Cantidad de Pasos para ")
@@ -308,13 +327,36 @@ Repositorio:https://github.com/heticor915/IS105UTP
      (begin
        (promnaturales n (+ acumulador valor) (+ contador 1))
        )
-     ]
-
-    
+     ]   
     [else
      (display (/ acumulador n)) ]
     
     )
   )
 (promnaturales (read) 0 0)
+
+
+;24. Hacer una funcion que reciba como parametro un numero entero N, lea N numeros y devuelva el promedio
+;de los datos leidos.
+(define (prom  acumulador contador )
+  (if (> contador 0)
+      (begin
+        (display "Ingrese Valor\n")
+        (prom (+ acumulador (read)) (- contador 1))
+        )
+      
+      (begin
+        (display "El promedio es:")
+        (display (/ acumulador valor))
+        (display "\nFIN")
+        
+        )
+      
+      )
+  )
+(display "\nEJERCICIO 24")
+(display "\nPromedio de numeros NATURALES n\n")
+(display "\n Ingrese n:\n")
+(define valor(read))
+(prom 0 valor); Se llama a funcion de arriba
  
