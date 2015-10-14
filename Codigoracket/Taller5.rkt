@@ -8,11 +8,11 @@
 ;UTP.20152 ISC
 ;====================================
 (display "
-\n============================================
+============================================
 \t.:::Taller 5.0:::.
- Recursividad
+      Recursividad
  feedback:hfjimenez@utp.edu.co 
-\t\tUTP.20152 ISC
+\t   UTP.20152 ISC
 Repositorio:https://github.com/heticor915/IS105UTP
 =============================================== " )
 ;1 Hacer un programa que muestre por pantalla 10 veces el 
@@ -29,7 +29,7 @@ Repositorio:https://github.com/heticor915/IS105UTP
       (display "fin\n")
    ) 
 )
-(display "EJERCICIO 1\n")
+(display "\nEJERCICIO 1\n")
 (msghola "Hola" 1)
 (display "")
 ;2.El mismo programa anterior pero mostrando el mensaje n veces.
@@ -58,7 +58,7 @@ Repositorio:https://github.com/heticor915/IS105UTP
         (newline)
         (primerosn (+ contadori 1) n)
         )
-      (display "EOF")
+      (display "EOF\n")
       )
   )
 
@@ -82,7 +82,7 @@ Repositorio:https://github.com/heticor915/IS105UTP
        (display "\n")
        (tablas n (+ i 1))
      )
-     (display "EOF")
+     (display "EOF\n")
    )
  )
 
@@ -106,12 +106,12 @@ Repositorio:https://github.com/heticor915/IS105UTP
            )
          (tablas2 n (+ j 1) i)
               )
-      (display "EOF")
+      (display "EOF\n")
   )
 )
 
 (display "\nEJERCICIO 5\n")
-(display "\nTablas de Multiplicar hasta n\n")
+(display "Tablas de Multiplicar hasta n\n")
 (display "Ingrese El N para mostrar esas Tablas de Multiplicar: ")
 (tablas2  (read) 1 1 )
 ;6. Hacer una función que calcule la sumatoria para los números enteros hasta N.
@@ -121,7 +121,7 @@ Repositorio:https://github.com/heticor915/IS105UTP
       (+ m (sumatoria n (- m 1)))))
 
 (display "\nEJERCICIO 6\n")
-(display "\nCalculo de Sumatoria hasta N\n")
+(display "Calculo de Sumatoria hasta N\n")
 (sumatoria 0 (read))
 
 ;7. Calculo del Factorial
@@ -148,27 +148,14 @@ Repositorio:https://github.com/heticor915/IS105UTP
   
 
 (display "\nEJERCICIO 7\n")
-(display "\n::FACTORIAL::\n")
+(display "::FACTORIAL::\n")
 (display "Ingrese El N para Obtener el Factorial:")
 (factorial (read) 1 1)  ; Leemos el valor del usuario, denominado n en la funcion, nosotros inicializamos
 ;un contador que va de 1 hasta 1 que sea mayor que n.
 ;8
 
-;Sumatoria!
-(define (sumatoria n)
-  (cond 
-    [(= n 0) 0]
-    [else 
-     (+ n (sumatoria (- n 1) ) )
-     ]
-   )
-  )
-
 (display "\nEJERCICIO 8\n")
-(display "\n::SUMATORIA::\n")
-(display "Ingrese El n para Obtener La sumatoria:")
-(sumatoria (read) )
-(display "El caso Base Fue i=0, de lo contrario :")
+(display "::SUMATORIA::\n")
 
 ;9 Hacer una función que calcule la sumatoria de los números dados por la expresión x2 / 2. Para todos los números entre 1 y n.
  
@@ -234,7 +221,7 @@ Repositorio:https://github.com/heticor915/IS105UTP
   )
 (define (primox n) (primo n 2))
 (display "\nEJERCICIO 15\n")
-(display "\nFuncion Booleana n\n")
+(display "Funcion Booleana n\n")
 (display "Ingresa n : ")
 (primox (read))
 
@@ -251,10 +238,83 @@ Repositorio:https://github.com/heticor915/IS105UTP
 )
 
 
-(display "\nEJERCICIO 16\n")
+(display "\nEJERCICIO 16")
 (display "\nFIBONACCI Serie\n")
 (display "\n Ingrese N:\n")
 (fibonachi (read) 1 0 1)   ; Serie de Fibonacci.
+;20. Hacer un programa que indique los pasos a seguir para resolver el problema de las torres
+;de Hanoi con n  anillosz
+
+(define (inductivo anillos)
+  (begin
+    (display "\nLa Cantidad de Pasos para ")
+    (display anillos)
+    (display " Anillos son :")
+    (display (- (expt 2 anillos) 1))
+    (display "\nMetodo Totalmente Inductivo, De Matematicas\n") ;Tomado de aqui https://www.youtube.com/watch?v=lilBGvaOSy8
+    (display "::Movimientos::")
+    )
+  )
 
 
+;Se desea mover "3 anillos desde la torre A hacia la torre C haciendo usando de la torre B como auxiliar"
+;Para trasladar todos los anillos desde la torre A hasta la torre C, tenemos que 
+;trasladar los n-1 anillos superiores de la torre A hacia la torre B, para luego 
+;trasladar el anillo restante N (el mas grande), hacia la torre C.
 
+(define (Hanoi n a c b)   
+   (if (> n 1)
+       (+ (Hanoi (- n 1) a b c)
+          ;Entonces para resolverlo se tiene que pasar los n-1 anillos superiores de A hacia
+          ;B haciendo uso de C, esto es:
+          ;(Hanoi (- n 1) a b c)
+          (mover a c) 
+          (Hanoi (- n 1) b c a)
+          ;Pasar los anillos en B hacia C haciendo uso de A para colocarlos en orden por tamaño:
+          ;(Hanoi (- n 1) b c a)
+             )
+       (mover a c)
+       ;Mover el más grande de A hacia C:
+       ;(mover a c)
+   )
+ )
+
+(define (mover origen destino)
+  (begin
+    (display "Mueve un anillo") 
+    (display " desde ") 
+    (display origen) 
+    (display " hacia la Torre ") 
+    (display destino)
+    (display "\n")
+    1
+    )
+  ) ;Fin de Funcion de Movimiento. 
+;Recomendado por Leonardo Monitor.
+;http://www.tecn.upf.es/~vlopez/docencia/castellano/todoshtml/PIIIt1cas/node29.html
+(display "\nEJERCICIO 20")
+(display "\nTORRES DE Hanoi\n")
+(display "\n Ingrese Cantidad de Anillos:\n")
+(define anillos(read))
+(inductivo anillos)
+(Hanoi anillos "A" "C" "B") ; Las Torres estan arde
+
+;24. Hacer una funcion que reciba como parametro un numero entero N, lea N numeros y devuelva el promedio
+;de los datos leidos.
+
+(define (promnaturales n acumulador contador)
+  (cond
+    [(<= contador n)
+     (begin
+       (promnaturales n (+ acumulador valor) (+ contador 1))
+       )
+     ]
+
+    
+    [else
+     (display (/ acumulador n)) ]
+    
+    )
+  )
+(promnaturales (read) 0 0)
+ 
