@@ -244,7 +244,7 @@ Repositorio:https://github.com/heticor915/IS105UTP
 (primox (read))
 
 
-;funcion de fibonachi
+;16. Hacer una función que devuelva el n-ésimo número de la serie de Fibonacci.(
 (define (fibonachi n anterior actual cuenta)
   (if (= n 0 )
       0
@@ -260,7 +260,15 @@ Repositorio:https://github.com/heticor915/IS105UTP
 (display "\n Ingrese n:\n")
 (fibonachi (read) 1 0 1)   ; Serie de Fibonacci.
 
+;17. Hacer una función que muestre por pantalla los n primeros números de la serie de
+;fibonacci.
 
+;18. Hacer una función que encuentre y devuelva el mínimo común múltiplo de dos
+;números a y b (enteros positivos).
+
+
+;19. Hacer una función que encuentre y retorne el máximo común divisor entre dos
+;números a y b (enteros positivos).
 
 ;20. Hacer un programa que indique los pasos a seguir para resolver el problema de las torres
 ;de Hanoi con n  anillosz
@@ -317,6 +325,22 @@ Repositorio:https://github.com/heticor915/IS105UTP
 (define anillos(read))
 (inductivo anillos)
 (Hanoi anillos "A" "C" "B") ; Las Torres estan arde
+;21.Se considera la serie definida por:
+;X 1 =0, X 2 =1, X 3 =8, ..., X n = (X n-3 ) + (X n-2 ) 3 + (X n-1 ) 2 .
+
+;22. Escriba un programa para caso planteado, que permita calcular el valor del que se
+;dispondrá, después de N periodos mensuales en el que un capital C, ha estado
+;siendo incrementado por una tasa de interés mensual R. Se presentan dos casos:
+;a. Interés simple: El capital no se incrementa con el interés mensual, es decir el
+;interés pagado es el mismo para cada periodo mensual.
+;b. Interés Compuesto: El interés mensual se le vá sumando al capital, de tal
+;forma que el interés pagado va aumentando mes a mes
+
+
+;23. Dada una fecha calcular el número de dias que han transcurrido desde el 1 de enero
+;de 2000. La fecha tiene 3 parámetros: dia, mes y año. Si la fecha es anterior debe
+;mostrar un mensaje de error. Resolverlo de forma recursiva. Tenga en cuenta que si
+;el año es divisible por 4 es bisiesto.
 
 ;24. Hacer una funcion que reciba como parametro un numero entero N, lea N numeros y devuelva el promedio
 ;de los datos leidos.
@@ -359,4 +383,52 @@ Repositorio:https://github.com/heticor915/IS105UTP
 (display "\n Ingrese n:\n")
 (define valor(read))
 (prom 0 valor); Se llama a funcion de arriba
- 
+
+
+;25. Para determinar el promedio académico de un estudiante, este se obtiene a partir
+;sumar la nota obtenida en cada materia por el número de créditos (peso asociado) de
+;la materia y se divide por el total de créditos cursados. Haga un programa que lea
+;por teclado las notas de un estudiante con los créditos asociados a la materia y
+;obtenga el promedio académico de este. Cada vez que se leen los datos de una
+;calificación, se pregunta al usuario si desea ingresar los datos de otra calificación.
+
+;26. Hacer una función que reciba un número entero N, lea N números y devuelva cual
+;es el valor mínimo de los datos leídos. De la misma forma haga otra función para
+;obtener el valor máximo.
+
+;27. Construir una función que reciba como parámetro un número natural N, y
+;calcule la suma de todos los naturales menores que el número recibido.
+
+;28. Construir un programa que dados dos enteros M y N diferentes, calcule la suma
+;de los cuadrados de los números que hay entre ellos, sin incluirlos.
+
+;29. escribir un programa que imprima una tabla con los números que hay entre dos números
+;leídos.Frente a cada número debe aparecer su cuadrado, su cubo, su raíz cuadrada y
+;su raíz cúbica.
+
+;Ïtem  Número Cuadrado  Raíz cuadrada Raíz cúbica
+;1        1      1       1             1
+
+;30. Escribir un programa que permita calcular el capital del que se dispondrá
+;después de N periodos mensuales en que un capital C ha estado expuesto a una tasa de
+;interés mensual R.
+
+;31. Con base en el algoritmo de Euclides, determine el Máximo Común Divisor (M.C.D),
+;dados dos números A y B.
+;32. Se considera la Serie definida por :
+;A1 = 0, A2 = 1, ..............., An = 3 * An-1 + 2 * An-2 ( para n >= 3)
+;Escribir un programa que permita calcular el término n.
+
+;33. Construya un programa que imprima las tablas de la suma para cada número natural que
+;existe entre dos números M y N diferentes. Incluya los dos números límites.
+;Imprima los primeros 15 elementos de cada tabla.
+;
+;34. Escriba un programa que calcule el valor promedio de los números naturales que
+;existen entre dos límites dados. Debe considerar ambos límites.
+;
+;35. Calcule la suma de los cubos de los números naturales que hay entre M y N.
+;Siendo M y N diferentes. No tenga en cuenta los límites.
+;
+;36. Calcule el valor de la desviación estándar de los cubos de los números naturales
+;que hay entre M y N.
+;Siendo M y N diferentes. Tenga en cuenta el límite inferior pero no el límite superior.
