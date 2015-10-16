@@ -396,11 +396,35 @@ Repositorio:https://github.com/heticor915/IS105UTP
 ;es el valor mínimo de los datos leídos. De la misma forma haga otra función para
 ;obtener el valor máximo.
 
+
 ;27. Construir una función que reciba como parámetro un número natural N, y
 ;calcule la suma de todos los naturales menores que el número recibido.
+(define (menoresuma n contador  acumulador)
+  (if (< contador n )
+      (menoresuma n (+ contador 1 ) (+ acumulador contador))
+      (display acumulador)
+      )
+
+  )
+
+(display "\nEJERCICIO 27")
+(display "\nSuma de Numeros Naturales Menores que N \n")
+(display "\n Ingrese n:\n")
+(menoresuma (read) 0 0) ; Se utiliza un acumulador  de manera que decremente los
 
 ;28. Construir un programa que dados dos enteros M y N diferentes, calcule la suma
 ;de los cuadrados de los números que hay entre ellos, sin incluirlos.
+
+(define (cuadradosmn m n acumulador contador)
+  (if (and (>= contador m ) (<= contador n) )
+      (cuadradosmn m n (+ acumulador (expt acumulador 2)) (+ contador 1))
+      (display acumulador)
+      )
+  )
+
+(cuadradosmn  7 10 0 7)
+
+
 
 ;29. escribir un programa que imprima una tabla con los números que hay entre dos números
 ;leídos.Frente a cada número debe aparecer su cuadrado, su cubo, su raíz cuadrada y
