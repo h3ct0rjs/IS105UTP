@@ -141,7 +141,17 @@ Repositorio:https://github.com/heticor915/IS105UTP
      (display acu)         )
           )
   )
-  
+;Version 2 mas corta
+
+(define (fact n )
+  (if (zero? n)
+      1
+      (* n (fact (- n 1)))
+      )
+  )
+
+;(fact (read) ) no checkea por los numeros negativos !
+
 
 (display "\nEJERCICIO 7\n")
 (display "::FACTORIAL::\n")
@@ -213,7 +223,32 @@ Repositorio:https://github.com/heticor915/IS105UTP
 (display "Ingrese la Base y Exponente: ")
 (elevar2 (read ) (read) 1)
 
-;13. Calculo de Submultiplos.
+;14 Hacer una función que muestre por pantalla los submúltiplos de x (entero positivo)
+(define (submultiplo x n)
+  (if (> n 1)
+      (if(= (modulo x n) 0)
+          (begin
+             (display n)
+             (newline)
+             (submultiplo x (- n 1))
+          )
+             (submultiplo x (- n 1))
+      )
+      1 
+   ) 
+)  
+
+;llamado
+(display "\nEJERCICIO 14\n")
+(display "SUBMULTIPLOS DE X \n")
+(display "Ingresa n : ")
+(display "Sacar los submultiplos de ")
+(define x (read))
+(newline)
+(define n (x))
+(submultiplo x n)
+
+;14.
 
 
 ;15.Hacer una función booleana que indique si un número es primo o no.
@@ -262,6 +297,7 @@ Repositorio:https://github.com/heticor915/IS105UTP
 
 ;17. Hacer una función que muestre por pantalla los n primeros números de la serie de
 ;fibonacci.
+
 
 ;18. Hacer una función que encuentre y devuelva el mínimo común múltiplo de dos
 ;números a y b (enteros positivos).
@@ -312,7 +348,7 @@ Repositorio:https://github.com/heticor915/IS105UTP
     (display " desde ") 
     (display origen) 
     (display " hacia la Torre ") 
-    (display destino)
+   (display destino)
     (display "\n")
     1
     )
@@ -392,6 +428,24 @@ Repositorio:https://github.com/heticor915/IS105UTP
 ;obtenga el promedio académico de este. Cada vez que se leen los datos de una
 ;calificación, se pregunta al usuario si desea ingresar los datos de otra calificación.
 
+
+(define (notas x y)
+  (begin
+    (display "desea ingresar otra nota? ")
+    (if (equal? 'si (read))
+        
+             
+            (  (lambda (nop1 x2 nop2 y2 x1 y1) (notas (+ x1 (* x2 y2)) (+ y1 y2) )  )  
+             (display "\ningrese la nota\n")
+             (read)(display "\nIngrese Cantidad de  Creditos\n") (read) x y)
+         (begin (display "El promedio es:")(exact->inexact (/ x y)))
+          ) )
+  )
+(printf"\n\nCalculo de Promedio Academico, Ingrese a continuacion:\n")
+((lambda (no x nop y) (notas (* x y) y) )
+ (display "\nIngrese Primer Nota \n") (read) 
+ (display "\ningrese numero de Creditos\n") (read))
+
 ;26. Hacer una función que reciba un número entero N, lea N números y devuelva cual
 ;es el valor mínimo de los datos leídos. De la misma forma haga otra función para
 ;obtener el valor máximo.
@@ -415,14 +469,31 @@ Repositorio:https://github.com/heticor915/IS105UTP
 ;28. Construir un programa que dados dos enteros M y N diferentes, calcule la suma
 ;de los cuadrados de los números que hay entre ellos, sin incluirlos.
 
-(define (cuadradosmn m n acumulador contador)
-  (if (and (>= contador m ) (<= contador n) )
-      (cuadradosmn m n (+ acumulador (expt acumulador 2)) (+ contador 1))
-      (display acumulador)
+(define (cuadradosmn m n acumulador )
+  (if (< m n )
+      (begin
+        (display m)
+        (display "\t")
+        (display acumulador)
+        (newline)
+        (cuadradosmn (+ m 1) n (+ acumulador (expt (+ m 1) 2 ) ))
+      
+        )
+      (display "FIN" )
       )
   )
+  
+(display "\nEJERCICIO 28")
+(display "\nSuma de Numeros Naturales rango M a N.\n")
+(display "\n Ingrese M:\n")
+(define inicio(read))
+(display "\n Ingrese N:\n")
+(define fin(read))
+(display "Valor")        (display "\t")
+        (display "Acumulado" )
+        (newline)
+(cuadradosmn  inicio fin 0 ) ; todo se acumula en acumulador, se agregan displays para debug.
 
-(cuadradosmn  7 10 0 7)
 
 
 
@@ -433,12 +504,56 @@ Repositorio:https://github.com/heticor915/IS105UTP
 ;Ïtem  Número Cuadrado  Raíz cuadrada Raíz cúbica
 ;1        1      1       1             1
 
+(define (cuadradosmn m n )
+  (if (< m n )
+      (begin
+        (display m)
+        (display "\t")
+        (display m)
+        (display "\t")
+        (display (* m m))
+        (display "\t")
+        (display (expt m 3))
+        (display "\t")
+        (display (sqrt m))
+        (display "\t")
+        (display (sqrt m))
+        (newline)
+        (cuadradosmn (+ m 1) n )
+      
+        )
+      (display "FIN" )
+      )
+  )
+    
+(display "\nEJERCICIO 29")
+(display "\nTabla de Numeros en Rango(M,N) \n")
+(display "\n Ingrese M:\n")
+(define inicio(read))
+(display "\n Ingrese N:\n")
+(define fin(read))
+(display "Ïtem")
+(display "\t")
+(display "Número" )
+(display "\t")
+(display "Cuad")
+(display "\t")
+(display "Cubo")
+(display "\t")
+(display "Sqrt")
+(display "\t")
+(display "3sqrt" )
+(newline)
+(cuadradosmn  inicio fin ) ; todo se acumula en acumulador, se agregan displays para debug.
+
 ;30. Escribir un programa que permita calcular el capital del que se dispondrá
 ;después de N periodos mensuales en que un capital C ha estado expuesto a una tasa de
 ;interés mensual R.
 
 ;31. Con base en el algoritmo de Euclides, determine el Máximo Común Divisor (M.C.D),
 ;dados dos números A y B.
+
+
 ;32. Se considera la Serie definida por :
 ;A1 = 0, A2 = 1, ..............., An = 3 * An-1 + 2 * An-2 ( para n >= 3)
 ;Escribir un programa que permita calcular el término n.
