@@ -7,6 +7,7 @@
 ;feedback:hfjimenez@utp.edu.co 
 ;UTP.20152 ISC
 ;====================================
+;Pendientes : 33,34,35,23, 26.
 (display "
 ============================================
 \t.:::Taller 5.0:::.
@@ -14,11 +15,21 @@
  feedback:hfjimenez@utp.edu.co 
 \t   UTP.20152 ISC
 Repositorio:https://github.com/heticor915/IS105UTP
-=============================================== " )
-;1 Hacer un programa que muestre por pantalla 10 veces el 
-;mensaje de texto “hola”.
-;Ejercicio 1
+===============================================
+NOTA: Algunos de los ejercicios fueron realizados
+con los integrantes que tenemos en el grupoderprogra,
+posiblemente, ellos tengan cosas parecidas.
+Los integrantes que nos reunimos los sabados son:
+Brandon.
+Charjuelan.
+Andres.
+Mono.
+Hector.
+Brian.
+Cardona.
 
+" )
+;1. Hacer un programa que muestre por pantalla 10 veces el mensaje de texto “hola”.
 (define (msghola texto contadorini)
   (if (<= contadorini 10) 
       (begin
@@ -298,6 +309,25 @@ Repositorio:https://github.com/heticor915/IS105UTP
 ;17. Hacer una función que muestre por pantalla los n primeros números de la serie de
 ;fibonacci.
 
+(define (fibonachi n anterior actual cuenta)
+  (if (= n 0 )
+      1
+      (if (<= cuenta n)
+          (begin
+            (display actual)
+            (newline)
+            (fibonachi n (+ actual anterior) anterior (+ cuenta 1))
+          )  
+            (display actual)
+      )
+  )
+)
+
+
+(display "\nEJERCICIO 17")
+(display "\nSerie de FIBONACCI \n")
+(display "\n Ingrese n:\n")
+(fibonachi (read) 1 0 1)
 
 ;18. Hacer una función que encuentre y devuelva el mínimo común múltiplo de dos
 ;números a y b (enteros positivos).
@@ -364,6 +394,39 @@ Repositorio:https://github.com/heticor915/IS105UTP
 ;21.Se considera la serie definida por:
 ;X 1 =0, X 2 =1, X 3 =8, ..., X n = (X n-3 ) + (X n-2 ) 3 + (X n-1 ) 2 .
 
+(define (primero n)
+  0
+)
+(define (segundo n)
+  1
+)
+(define (tercero n)
+  8
+)
+(define (xn n)
+  (if (> n 0)
+      (if (= n 1)
+          (primero 1)
+          (if (= n 2)
+              (segundo 1)
+              (if (= n 3)
+                  (tercero 1)
+                  (if (> n 3)
+                      (+ (xn (- n 3))(expt (xn (- n 2)) 3)(expt (xn (- n 1))2))
+                      (display "solo numeros enteros positivos")
+                   )
+              )
+           )
+        )
+      (display "solo es para numeros mayores a 0")
+    )
+)
+    ;Se debe reemplazar utilizando un Cond,Esta es la version de Brando, La de German
+(display "\nEJERCICIO 20")
+(display "\nSerie 21 Xn..\n")
+(display "ingrese el valor de n ")
+(xn (read))
+
 ;22. Escriba un programa para caso planteado, que permita calcular el valor del que se
 ;dispondrá, después de N periodos mensuales en el que un capital C, ha estado
 ;siendo incrementado por una tasa de interés mensual R. Se presentan dos casos:
@@ -377,6 +440,8 @@ Repositorio:https://github.com/heticor915/IS105UTP
 ;de 2000. La fecha tiene 3 parámetros: dia, mes y año. Si la fecha es anterior debe
 ;mostrar un mensaje de error. Resolverlo de forma recursiva. Tenga en cuenta que si
 ;el año es divisible por 4 es bisiesto.
+
+;Pendiente por realizar.
 
 ;24. Hacer una funcion que reciba como parametro un numero entero N, lea N numeros y devuelva el promedio
 ;de los datos leidos.
@@ -549,6 +614,8 @@ Repositorio:https://github.com/heticor915/IS105UTP
 ;30. Escribir un programa que permita calcular el capital del que se dispondrá
 ;después de N periodos mensuales en que un capital C ha estado expuesto a una tasa de
 ;interés mensual R.
+;Este programa no es recursivo , o almenos la forma de expresarlo matematicamente es lineal.
+
 
 ;31. Con base en el algoritmo de Euclides, determine el Máximo Común Divisor (M.C.D),
 ;dados dos números A y B.
@@ -556,18 +623,80 @@ Repositorio:https://github.com/heticor915/IS105UTP
 
 ;32. Se considera la Serie definida por :
 ;A1 = 0, A2 = 1, ..............., An = 3 * An-1 + 2 * An-2 ( para n >= 3)
-;Escribir un programa que permita calcular el término n.
+;Escribir un programa que permita calcular el término n.  
+(define (prumprum x) 
+  (cond 
+    [(= x 1) 0]
+    [(= x 2) 1]
+    [#t (+ (* 3 (prumprum (- x 1)))
+           (* 2 (prumprum (- x 2)))
+           )     
+   ]
+  )
+ )
 
-;33. Construya un programa que imprima las tablas de la suma para cada número natural que
-;existe entre dos números M y N diferentes. Incluya los dos números límites.
-;Imprima los primeros 15 elementos de cada tabla.
-;
+(printf "\n\nse calculara la serie definida como 
+(x1=0),(x2=1)...=3*(xn-1)+2*(xn-2) para n>=3
+ingrese el valor de n para calcular X(n)
+se recomienda que n sea menor a 40
+")
+((lambda (a <..>) (prumprum a))
+ (read)
+ (display "el resultado es ") 
+ )
+
+;32 A1 = 0, A2 = 1, ..............., An = 3 * An-1 + 2 * An-2 ( para n >= 3)
+;Escribir un programa que permita calcular el término n.
+(define (a1 n)
+  0)
+(define (a2 n)
+  1)
+(define (An n)
+  (if(> n 0)
+     (if (= n 1)
+         (a1 1)
+         (if (= n 2)
+             (a2 1)
+             (if (>= n 3)
+                 (+ (* (An (- n 1)) 3)(* 2(An (- n 2))))
+                 ("\nsolo para numeros enteros positivos \n")
+             )
+         )
+     )
+     (display "solo es para numeros mayores a 0")
+    )
+)
+;ToDo se debe trata de implementar esto con Condicional para que se vea mas elegante.
+(display "\nEJERCICIO 32")
+(display "\nAn = 3 * An-1 + 2 * An-2 ( para n >= 3)\n")
+(display "\n Ingrese el valor de n:\n")
+(An (read))
+
+
 ;34. Escriba un programa que calcule el valor promedio de los números naturales que
 ;existen entre dos límites dados. Debe considerar ambos límites.
-;
+;Realizado con Brian , Segun brian lambda me sirve de propuesta gral para definir una funcion
+;dentro de otra funcion y el uso general es : ((lambda (parametros )) parametros que entraran )
+(define (promex a b c d)
+(if (>= b a)
+    (promex a (- b 1) (+ c 1) (+ d b))
+    (begin (display "el promedio entre los dos números es ")(exact->inexact (/ d c)))
+    )
+  
+  )
+
+((lambda (ignorar  a b) 
+  (if (>= b a)
+      (promex a b 0 0)
+      (promex b a 0 0)
+))
+ (display "\nEJERCICIO 34")
+ (display "\nvalOR PROMEDION ENTRE N,M .")
+ (read)  (read))
+
 ;35. Calcule la suma de los cubos de los números naturales que hay entre M y N.
 ;Siendo M y N diferentes. No tenga en cuenta los límites.
-;
+
 ;36. Calcule el valor de la desviación estándar de los cubos de los números naturales
 ;que hay entre M y N.
 ;Siendo M y N diferentes. Tenga en cuenta el límite inferior pero no el límite superior.
