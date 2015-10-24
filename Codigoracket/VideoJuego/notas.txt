@@ -1,0 +1,24 @@
+---------------------------------------------------
+-Esta Carpeta Contendra todo el video Juego Arcade.
+-La organizacion de Modulos Se hizo segun la guia 
+-oficial de racket lang[1].
+-
+-Los archivos del VideoJuego Estan Separados asi:
+-
+-Graficos/:Contiene todo lo que tiene que ver con el 
+diseño de ventanas, control de botones.
+-Logica/  : Desarrolla el funcionamiento del motor 
+interno logico del video juego, comprueba acciones, 
+-Imagenes/:Contiene todas las imagenes relativas, 
+fondos, colores, y contornos.
+-Internet/: Controla el envio de datos y puntuacion
+al sistema del scoreboard realizado en html y jquery.
+En la consulta que se realiza se encontraron varias opciones
+y ejemplos de juegos como en [2],[3],[4].
+----------------------------------------------------
+Referecias:
+
+[1]:http://docs.racket-lang.org/guide/module-basics.html
+[2]:http://https://github.com/darrencruse/pong-world-racket
+[3]:http://austinmaddocks.weebly.com/drracket.html
+[4]:http://docs.racket-lang.org/games/
