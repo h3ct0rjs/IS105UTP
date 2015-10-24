@@ -12,14 +12,16 @@ Este Repositorio pretende ser una compilación de los ejercicios puestos en la c
   - Notas, Presentaciones de Clase.
 
 ### Version
-0.1
+0.2
 ### Requisitos
 Para correr los ejercicios desarrollados necesitaras la ultima versión de Drracket, a la hora de probar se encontraba en la versión 6.2.1, probado bajo Debian Gnu/Linux y OpenBsd.
 Todos los ejercicios pueden ser testeados utilizando la seleccion de lenguaje avanzado.
 
-Es posible utilizar el instalador hallado dentro de este repositorio e instalarlo de la siguiente manera si usas Debian Gnu/Linux o derivados:
+Es posible utilizar el instalador hallado en el sitio web official de racket![1](http://download.racket-lang.org/) e instalarlo de la siguiente manera si usas Debian Gnu/Linux o derivados:
 ```sh
+user@IS105UTP/$ mkdir racket 
 user@IS105UTP/$ cd racket 
+user@IS105UTP/$ wget http://mirror.racket-lang.org/installers/6.2.1/racket-6.2.1-i386-linux-debian-squeeze.sh 
 user@IS105UTP/racket$ chmod +x  racket-6.2.1-i386-linux-debian-squeeze.sh
 user@IS105UTP/racket$./racket-6.2.1-i386-linux-debian-squeeze.sh
 ```
@@ -33,13 +35,12 @@ user@/usr/bin/racket/bin$ sudo ln -sf drracket /usr/bin/drracket
 user@evilmachine$ git clone https://github.com/heticor915/IS105UTP.git 
 ```
 ### ToDo's
- - Proyecto Final Utilizando Graficos.
- - Proyecto Personal Ipparser de Ip's Lacnic.
+ - Ordenar Carpetas.
 
 Licencia
 ----
 MIT
 
-**Free Software, Hell Yeah!**
+**Code Just for Fun, Hell Yeah!**
 
 *Contactme:hfjimenez@utp.edu.co*
