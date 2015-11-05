@@ -8,6 +8,14 @@
 (define ventana (open-viewport "ventana" 800 500))
 ;-----
 ((draw-viewport ventana) "aquamarine")
+
+(define ventana2 (open-pixmap "ejemplo" 800 500))
+;;dibujamos la imagen a.png
+((draw-pixmap ventana2) "fondo.jpg" (make-posn 0.0 0.0) "black")
+;;copiamos el contenido de una ventana a otra
+(copy-viewport ventana2 ventana)
+
+
 ;::::::::::::::::::::::::::::::::::::::::::::::::::::::
 (define (nave posx posy lad)
 ;------- 
