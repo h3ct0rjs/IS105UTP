@@ -2,56 +2,63 @@
 
 (require(lib "graphics.ss" "graphics")) 
 (open-graphics)
-
 ;-----------------------------------------------------------
+;ventanas
 (define ventana (open-viewport "ventana" 800 500))
 ;-----
 ((draw-viewport ventana) "black")
 ;:::::::::::::::::::::
 (define ventana2 (open-pixmap "ejemplo" 800 500))
-;;dibujamos la imagen a.png
+;dibujamos la imagen fondo.jpg
 ((draw-pixmap ventana2) "fondo.jpg" (make-posn 0.0 0.0) "black")
-;;copiamos el contenido de una ventana a otra
+;copiamos el contenido de una ventana a otra
 (copy-viewport ventana2 ventana)
-
 ;::::::::::::::::::::::::::::::::::::::::::::::::::::::
-(define (nave posx posy lad)
-;------- 
-  (begin (copy-viewport ventana2 ventana)   
-         (cond     
-    ;[(or (<= posx 10) (>= posx 800))  ]
-    
+;posicion en x
+(define posy# (vector 350))
+;::::::::::::::::::::::::::::::::::::::::::::::::::::::
+;movimiento
+(define (nave lad)
+ (begin
+  (copy-viewport ventana2 ventana)   
+  (cond     
     [(equal? lad 'l)                    
-        ((draw-pixmap ventana) "defender.png" (make-posn posx posy) "black") ]
+      ((draw-pixmap ventana) "defender.png" (make-posn (vector-ref posy# 0) 440) "black")]
    
     [(equal? lad 'r)
-       ((draw-pixmap ventana) "defender.png" (make-posn posx posy) "black")]
-;else
-   [else (void)]    
-     ))
+      ((draw-pixmap ventana) "defender.png" (make-posn (vector-ref posy# 0) 440) "black")]
+
+    [else (void)]    
    )
-
+ )
+)
+;:::::::::::::::::::::::::::::::::::::::::::::::::
+(define (move# a)
+(cond
+;left
+  [(and a (>= (vector-ref posy# 0) 10))
+    (begin (vector-set! posy# 0 (- (vector-ref posy# 0) 13)) (nave 'l))]
+;right
+  [(and (not a) (<= (vector-ref posy# 0) 740))
+   (begin (vector-set! posy# 0 (+ (vector-ref posy# 0) 13)) (nave 'l))]
+  )
+)
 ;::::::::::::::::::::::::::::::::::::::::::::::::::
-(define (teclado posx posy press)
-
+(define (teclado press)
  (cond
-    [(and (>= posx 20) (equal? press 'left))
+    [(equal? press 'left)
      (begin
-      (nave posx posy 'l)
-      (teclado(- posx 10) posy (key-value (get-key-press ventana)) ))]
-    
-    [(and (<= posx 740)(equal? press 'right))
+       (move# #t)
+       (teclado (key-value (get-key-press ventana))))]
+
+    [(equal? press 'right)
      (begin
-      (nave posx posy 'r)
-      (teclado (+ posx 10) posy (key-value (get-key-press ventana)) ))]
-   
+       (move# #f)
+       (teclado (key-value (get-key-press ventana))))]   
 ;else
-    [else (teclado  posx posy (key-value (get-key-press ventana)) )]
-  
+    [else (teclado (key-value (get-key-press ventana)))]  
   )
 ) 
-
 ;:::::::::::::::::::::::::::::::::::::::::::::::::::::
 ;Prueba
-(teclado 350 440 10)
-;(teclado COORDENADA-EN-X COORDENADA-EN-Y NO-SE)
+(teclado 10)
