@@ -1,0 +1,60 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-advanced-reader.ss" "lang")((modname cheatsheet) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f () #f)))
+;CheatSheet, taken originally from
+;Convencion.
+car=caracter.
+
+;Funciones Primales Cadenas:
+(char? caracter)             -->Devuelve #t o #f si es caracter o no! 
+(char=? car1 car2) -->Devuelve #t o #f si ambos caracteres son iguales.
+(char<? car1 car2) -->Devuelve #t o #f si caracter1 esta antes que caracter2 en alfabeto
+(char>? car1 car2) -->Devuelve #t o #f si caracter1 esta despues de caracter2 en alfabeto
+(char<=? car1 car2)-->Devuelve #t o #f si caracter1 esta antes que caract2 o son los mismos.
+(char>=? car1 car2)-->Devuelve #t o #f si ambos caracteres son iguales.
+
+;Determinar si el caracter evaluado es numerico, alfabetico, especial, mayuscula, minuscula.
+(char-alphabetic? car)      -->Devuelve #t o #f si el caracter es alphabetico.
+(char-numeric? car)         -->Devuelve #t o #f si el caracter es numerico.
+
+;Determinar si es mayuscula o minuscula.
+(char-whitespace? car)      -->Es en blanco.
+(char-upper-case? car)      -->Es mayuscula el caracter?
+(char-lower-case? car)      -->Es minuscula el caracter?
+(char-upcase car)           -->Retorna la mayuscula de car.
+(char-downcase car)         -->Retorna la minuscula de car.
+
+
+(string        #\a #\b)      -->"ab"
+(random #)                   -->debuelve numero aleatoreo
+(define c (make-string 4 c)) -->hace cadena con c
+(string-ref   string #)      -->extrae cararter
+(string-set! cadena # char)  -->pone un cararter
+(string-length string)       -->cuenta la cantidad de caracteres
+(substring string #1 #!2)    -->extrae una seccion
+(string-append "" "")        -->una cadenas
+
+
+;Funciones Primales Sobre listas.
+
+(reverse (list 1 5 2)) --> invierte una lista
+(append list1 list2)   --> unir listas           
+(length list)          --> elementos en una lista
+(member 6 lista2)      --> (lista2 8 9 10)=#f
+(add1 (list  1 3))     --> '(2  4)
+(map func lista)       --> applica una operacion como suma de listas
+(empty? lista)         --> si estaba vacia = #t
+(apply + ‘(10 20))     --> = 30
+60 
+(filter función lista)
+
+(and #t #t #f)   -->#f
+(or  #t #t #f)   -->#t
+
+remainder     --> residuo de división
+quotient      --> parte entera, cociente
+
+(read)
+(read-char)
+(read-line)
+(read-string #)

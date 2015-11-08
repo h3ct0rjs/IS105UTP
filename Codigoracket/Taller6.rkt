@@ -1,3 +1,4 @@
+#lang racket
 ;;====================================
 ;Taller 6.0
 ;Vectores en Dr Racket
@@ -12,20 +13,21 @@ feedback:hfjimenez@utp.edu.co
 \t UTP.20152 ISC
 Repositorio:https://github.com/heticor915/IS105UTP
 ===============================================
-NOTA:
+NOTA:Ninguna hasta ahora.
 " )
 
-;Para cada uno de los ejercicios planteados, debe realizar un programa en Dr Scheme con
-;la siguiente documentación:
-;a. Objetivo
-;b. Plantilla
-;c. Parámetros de entrada (precondición)
-;d. Parámetro de salida (postcondición, si lo hay),
-;e. Ejemplo
-;f. Definición del programa.
 
 ;1) Hacer una función que reciba una cadena de caracteres y devuelva otra mutable y con
 ;el contenido de la primera.
+(define (mutable cadenita)
+  (begin
+    (display "Cadena Original es:")
+    (display cadenita)
+    )
+  )
+(display "::Ejercicio 1::")
+(display "Ingrese su Cadena a Mutar:\t")   
+(mutable (read))
 
 ;2) Hacer una función que reciba una cadena de caracteres y un carácter adicional. La
 ;cadena se debe retornar con el carácter anexaado al final de la misma.
