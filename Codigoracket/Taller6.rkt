@@ -31,23 +31,50 @@ NOTA:Ninguna hasta ahora.
 
 ;2) Hacer una función que reciba una cadena de caracteres y un carácter adicional. La
 ;cadena se debe retornar con el carácter anexaado al final de la misma.
+(display "::Ejercicio 2::\n")
+(display "[*]Ingrese la Cadena:\n")
+(define cad1 (read-line))
+(display "[*]Ingrese el Anexo:\n")
+(define caracteranexo (read-line))
+(string-append cad1 caracteranexo " " )
+
 
 ;3) Hacer una función que reciba un entero N y devuelva una cadena de longitud N,
 ;leyendo por pantalla cada uno de los N caracteres de la cadena.
 
+
 ;4) Hacer una función que reciba una cadena de caracteres mutable y la invierta en ella
 ;misma.
+
 
 ;5) Hacer una función que reciba una cadena de caracteres y devuelva otra cadena
 ;invirtiendo todos los caracteres de la primera.
 
+(display "::Ejercicio 5 ::\n")
+(display "[*]Ingrese la Cadena a Invertir:\n")
+(define ca1 (read-line))		; Esta es una forma simple de almacenar un dato, aunque recuerde que en racket no existe asignacion, ni variables.
+
+(define (invierte cadena)
+  (list->string (reverse (string->list cadena)))
+)
+(invierte ca1)
+
 ;6) Haga una función que reciba dos cadenas de caracteres y devuelva otra cadena con la
 ;concatenación de las dos primeras.
+(display "::Ejercicio 6::\n")
+(display "[*]Ingrese las Dos Cadenas a Concantenar:\n")
+(define cad1 (read-line))
+(define cad2 (read-line))
+(display "resultado\n")
+(define concatena (string-append cad1 " " cad2 " " )) ;Se podria usar una funcion anonima con lambda.
+(displayln concatena)
 
 ;7) Hacer una función que reciba una cadena de caracteres y cuente cuantas vocales tiene.
 
+
 ;8) Hacer una función que reciba una cadena de caracteres y devuelva otra sin las
 ;vocales.
+
 
 ;9) Construir un programa que lea un string con solo caracteres numéricos y devuelva el
 ;número que representa.
