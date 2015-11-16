@@ -1,20 +1,30 @@
-  ;;====================================
+#lang racket
+; ▄▄▄·.▄▄ ·▄▄▄▄▄
+;▐█ ▄█▐█ ▀.•██  
+; ██▀·▄▀▀▀█▄▐█.▪
+;▐█▪·•▐█▄▪▐█▐█▌·
+;.▀    ▀▀▀▀ ▀▀▀
+;Computer Security Group
+;====================================
 ;Taller 7.0
 ;Vectores en Dr Racket
 ;feedback:hfjimenez@utp.edu.co
 ;UTP.20152 ISC
 ;====================================
 (display "
+	 ▄▄▄·.▄▄ ·▄▄▄▄▄
+	▐█ ▄█▐█ ▀.•██  
+	 ██▀·▄▀▀▀█▄▐█.▪
+	▐█▪·•▐█▄▪▐█▐█▌·
+	.▀    ▀▀▀▀ ▀▀▀	
+	Computer Security Group	
 ============================================
 \t.:::Taller 7.0:::.
 Vectores Dr Racket.
 feedback:hfjimenez@utp.edu.co
 \t UTP.20152 ISC
 Repositorio:https://github.com/heticor915/IS105UTP
-===============================================
-NOTA:
-
-" )
+===============================================" )
 
 ;VECTORES:
 
