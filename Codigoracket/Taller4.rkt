@@ -17,7 +17,7 @@
 \t\tUTP.20152 ISC
 Repositorio:https://github.com/heticor915/IS105UTP
 =============================================== 
-Descripción:\n")
+Descripción:\n ")
 ;1. Desarrollar una funcion  para determinar si un n
 ;dado es solucion de la ecuacion evaluada en la expresion
 (define (ejercicio1 n)
