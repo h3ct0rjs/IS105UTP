@@ -27,12 +27,9 @@ Repositorio:https://github.com/heticor915/IS105UTP
 ===============================================" )
 
 ;VECTORES:
-
 ;Notas Vectores 
-
 ;1. Hacer una función que reciba un valor entero N y devuelva un vector de tamaño
 ;N, donde cada posición contiene el valor -1.
-
 (define (vec n )
   (display "Creando Vector Vacio: ")
   (display (make-vector n ))         ;Crea un vector vacio de tamaño n.
@@ -45,6 +42,22 @@ Repositorio:https://github.com/heticor915/IS105UTP
 
 ;2. Hacer una función que reciba un entero N y devuelva un vector de tamaño N, con
 ;enteros leidos por teclado.
+
+(define (vec3 n contador )
+	(begin 
+		(if (<= contador n)
+
+
+			)
+		)
+  (display "Creando Vector Vacio: ")
+  (display (make-vector n ))         ;Crea un vector vacio de tamaño n.
+ ) 
+(display "::Ejercicio 2::\n")
+(display "[*]Ingrese La cantidad de Valores  Numericos que va a ingresar:\n")
+(define nnumerico (read))
+
+
 
 ;3. Hacer lo mismo que en el punto anterior, pero generando los datos aleatoriamente.
 ;4. Hacer una función reciba un vector de enteros y un numero X, busque el número
