@@ -33,6 +33,14 @@ Repositorio:https://github.com/heticor915/IS105UTP
 ;1. Hacer una función que reciba un valor entero N y devuelva un vector de tamaño
 ;N, donde cada posición contiene el valor -1.
 
+(define (vec n )
+  (display "Creando Vector Vacio: ")
+  (display (make-vector n ))         ;Crea un vector vacio de tamaño n.
+ ) 
+
+(display "::Ejercicio 1::\n")
+(display "[*]Ingrese valor de N:\n")
+(vec (read)) ;Con read-line no funcionara, existe un problema de strings !
 
 
 ;2. Hacer una función que reciba un entero N y devuelva un vector de tamaño N, con
