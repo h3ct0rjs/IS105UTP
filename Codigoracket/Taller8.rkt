@@ -9,6 +9,12 @@
 ;UTP.20152 ISC
 ;====================================
 (printf "
+	 ▄▄▄·.▄▄ ·▄▄▄▄▄
+	▐█ ▄█▐█ ▀.•██  
+	 ██▀·▄▀▀▀█▄▐█.▪
+	▐█▪·•▐█▄▪▐█▐█▌·
+	.▀    ▀▀▀▀ ▀▀▀	
+	Computer Security Group	
 ============================================
 \t.:::Taller 8.0:::.
 Listas Dr Racket.
@@ -17,6 +23,7 @@ feedback:hfjimenez@utp.edu.co, brianruiz@utp.edu.co
 Repositorio:https://github.com/heticor915/IS105UTP
 ===============================================
 NOTA:" )
+
 ;1. Hacer una función que reciba una lista y cuente de forma recursiva cuantos elementos hay en la lista.
 
 ;2. Hacer una función que devuelva el promedio de los datos de una lista de enteros.
