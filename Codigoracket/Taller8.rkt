@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-advanced-reader.ss" "lang")((modname Taller8) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f ())))
+#reader(lib "htdp-advanced-reader.ss" "lang")((modname Taller8) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f () #f)))
 ;#lang racket
 ;====================================
 ;Taller 8.0
@@ -18,17 +18,6 @@ Repositorio:https://github.com/heticor915/IS105UTP
 ===============================================
 NOTA:" )
 ;1. Hacer una función que reciba una lista y cuente de forma recursiva cuantos elementos hay en la lista.
-(define (AddicionLista  Lista )
-    (if (null? last)
-         (display contador)
-         (AddicionLista  (append Lista (list (read)) ) )
-       
-      )
-  )
-  
-(display "\nEjercicio 1\n")  
-(printf "Ingresa Datos Lista:\n")
-(AddicionLista (list(read)) (list) 0)
 
 ;2. Hacer una función que devuelva el promedio de los datos de una lista de enteros.
 

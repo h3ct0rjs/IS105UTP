@@ -1,9 +1,10 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-advanced-reader.ss" "lang")((modname cheatsheet) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f () #f)))
-;CheatSheet, taken originally from
+;CheatSheet ò Chuleta de Funciones para el Tercer parcial.
 ;Convencion.
-car=caracter.
+;car:caracter.
+;cad:cadena.
+;pos:posicion 
+;lst: lista
+;vec:vector
 
 ;Funciones Primales Cadenas:
 (char? caracter)             -->Devuelve #t o #f si es caracter o no! 
@@ -24,7 +25,17 @@ car=caracter.
 (char-upcase car)           -->Retorna la mayuscula de car.
 (char-downcase car)         -->Retorna la minuscula de car.
 
+Hay tres funciones básicas para la creación y manipulación de cadenas:
+(string cad) 		-->	forma una nueva cadena a partir de una serie de caracteres;
+(string-ref cad pos)--> devuelve un caracter de una cadena, dada su posición; 
+(string-length) 	--> devuelve su longitud medida en caracteres
 
+Cadenas Mutables:
+(make-string str ) 			--> recibe una longitud para la nueva cadena mutable y opcionalmente ;uncaracter de relleno, por defecto el caracter nulo ( \u0000 ).
+(string-set! cad pos)		-->modifica un caracter de una cadena mutable, dada su posición.
+(string->immutable-string)  --> convierte una cadena mutable en su versión inmutable
+(immutable?)				--> verifica si un objeto es inmutable.
+(string-copy! cad1 cad2 ) 	--> copia total o parcialmente el contenido de una cadena mutable 								  o inmutable a otra cadena mutable.
 (string        #\a #\b)      -->"ab"
 (random #)                   -->debuelve numero aleatoreo
 (define c (make-string 4 c)) -->hace cadena con c
@@ -36,6 +47,7 @@ car=caracter.
 
 
 ;Funciones Primales Sobre listas.
+
 
 (reverse (list 1 5 2)) --> invierte una lista
 (append list1 list2)   --> unir listas           
@@ -58,3 +70,19 @@ quotient      --> parte entera, cociente
 (read-char)
 (read-line)
 (read-string #)
+;Funciones de Vectores 
+
+Algunas funciones básicas para manipular vectores son:
+(vector  vec)		--> construye un nuevo vector mutable conteniendo los parámetros de la 
+(vector? vec)       --> verica si su parámetro es un vector.
+(vector-ref vec pos)--> devuelve un elemento de un vector en función de su posición.
+(list->vector lst)	--> convierte una lista en un vector con los mismos elementos.
+(vector->list vec) 	-->convierte un vector en su representación de lista.
+(vector-set! vec pos v)-->modica un valor de un vector mutable dada su posición.
+(vector-lenght vector) -->Muestra el tamño del vector.
+(make-vector vec)   -->crea un vector mutable de un tamaño especicado y opcionalmente un
+					 valor de relleno.
+(vector-immutable vec)-->igual que vector pero devuelve un vector inmutable.
+(vector->immutable-vector vec)-->devuelve un vector inmutable dado otro vector
+(vector-copy! vec vec2)-->copia total o parcialmente el contenido de un vector (mutable o in-
+					mutable) a un vector mutable.
