@@ -97,24 +97,23 @@ Linea 93-97|#
     [(= choice 2)
      (begin
        (display "\n2:::Busqueda Vectorial:::")
+       (display "\nVector en el que se buscara:\t")
+       (display vectorglobal)
        (display "\nIngrese valor de X a buscar en Vector:\t")      
        (conteoderepeticionesx? (read) vectorglobal) ; Llamado sencillo a la funcion de conteo del mismo valor
-       (display "\nVector en el que se busco:\t")
-       (display vectorglobal)
-       (display "\n[!]EOF\t")
        )
      ]
     [(= choice 3)
      (begin
        (display "\n3:::Eliminacion de Dato en Lista:::")
-       (display "La lista a Modificar es:\t")
+       (display "\nLa lista a Modificar es:\t")
        (display listica)
-       (display "Sugerencia : Elimine el 5, ")
+       (display "\nSugerencia : Elimine el 5, ")
        (display "\nIngrese el Elemento que desea Eliminar:\t")
        (eliminalista (read) listica)
        )
      ]
-    (display "Ninguna Opcion Valida, Lo Sentimos Saliendo...") 
+    (display "\nNinguna Opcion Valida, Lo Sentimos Saliendo...") 
     )
   )
 
