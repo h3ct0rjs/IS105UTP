@@ -117,18 +117,37 @@ Repositorio:https://github.com/heticor915/IS105UTP
 
 ;7. Hacer una función que reciba una lista y devuelva otra con los datos de la primera invertida. Nota: No se puede
 ;usar otra estructura de datos como un vector.
-
+(display "\n\n::Ejercicio 5::\n")
+(display "Ingrese su Lista\nEl formato CORRECTO  es: (valor1 valor2 valor3):\n")   
+(let*  
+    ((lista (read)))                ;Recibe la Lista del usuario
+  (define (reversarlista a)             ;Funcion de Forma Local para promedio 
+    (if  (empty? a)                ;Si la lista esta vacia es por que signifca que usuario no ingreso nada
+         (display "[!]No hay Promedio la Lista esta Vacia ")
+         (begin
+           (display "\nEl Valor Mayor en la lista es * ")
+          (fprintf"La Mezcla de Listas es  ~a~s "a,(reverse a))
+           )
+         )
+    )
+  (reversarlista lista )
+)
 
 ;8. Hacer una función que devuelva una lista con los datos que el usuario digite por teclado. 
 ;La entrada de datos termina cuando el usuario entre el número -1.
 
+
 ;9. Hacer una función que reciba dos listas y devuelva una lista con la concatenación de las dos anteriores.
+
 
 ;10. Hacer una función que reciba una lista y dos enteros positivos. Se debe devolver una sublista con los elementos que
 ;hay en las posiciones desde el primer número hasta el segundo, incluyéndolos.
 
+
 ;11. Hacer una función que reciba una lista de nombres (cadenas de caracteres) y devuelva la cadena de mayor longitud.
+
 
 ;12. Hacer una función que reciba números enteros y devuelva una lista de listas. La lista debe contener 4 listas.
 ;En la primera están los números impares negativos, en la segunda los pares negativos, en la tercera los impares positivos y
 ;en la última los pares positivos. Recuerde que la lista vacía se crea con (list ).
+
