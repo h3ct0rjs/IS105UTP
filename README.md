@@ -60,12 +60,6 @@ user@/usr/bin/racket/bin$ sudo ln -sf drracket /usr/bin/drracket
 user@evilmachine$ git clone https://github.com/heticor915/IS105UTP.git 
 ```
 
-### ToDo's
-
- - Terminar Vídeo Juego.
- 	- Revisar una implementacion gnumaku.
- 	- Verificar Implementacion de Sonido.
-
 Licencia
 ----
 MIT
