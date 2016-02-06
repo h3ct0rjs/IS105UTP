@@ -27,6 +27,10 @@ Notece que las carpetas esta en el siguiente orden:
  : Contiene los Talleres a Resolver Propuesto por el profesor a cargo.
 
 
+### Proyectos Finales de Programaciòn
+visite el repositorio si necesita informacion
+https://github.com/heticor915/VideoJuego
+
 ###
 Version
 0.4
